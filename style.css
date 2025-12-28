@@ -1,0 +1,37 @@
+:root {
+    --bg: #0b0f1a;
+    --text: #e2e8f0;
+    --accent: #60a5fa;
+    --secondary: #94a3b8;
+    --card: #161b2a;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    line-height: 1.7;
+}
+
+.container { max-width: 850px; margin: 0 auto; padding: 0 20px; }
+
+nav { padding: 30px 0; border-bottom: 1px solid #1e293b; }
+nav .container { display: flex; justify-content: space-between; }
+nav ul { list-style: none; display: flex; gap: 25px; margin: 0; }
+nav a { color: var(--text); text-decoration: none; font-size: 0.9rem; letter-spacing: 1px; }
+
+.hero { padding: 80px 0 60px; }
+.hero h1 { font-size: 3rem; margin: 0; }
+.subtitle { color: var(--accent); font-size: 1.2rem; margin-top: 5px; }
+.status { color: var(--secondary); font-style: italic; }
+
+h2 { border-left: 3px solid var(--accent); padding-left: 15px; text-transform: uppercase; font-size: 1rem; letter-spacing: 2px; color: var(--accent); margin-top: 50px; }
+
+.project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.card { background: var(--card); padding: 25px; border-radius: 8px; border: 1px solid #1e293b; }
+.card code { color: var(--accent); font-family: 'Fira Code', monospace; font-size: 0.8rem; }
+
+hr { border: 0; border-top: 1px solid #1e293b; margin: 40px 0; }
+
+footer { padding: 60px 0; text-align: center; color: var(--secondary); font-size: 0.8rem; }
