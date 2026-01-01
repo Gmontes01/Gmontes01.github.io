@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Post</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
+</head>
+<body>
+  <main class="container">
+    <article id="post"></article>
+  </main>
+  <script>
+    const file = new URLSearchParams(location.search).get('file');
+    if (!file) document.getElementById('post').innerText = 'No file specified.';
+    else fetch(file)
+      .then(r => r.text())
+      .then(text => {
+        if (file.endsWith('.md')) {
+          const html = marked.parse(text);
+          document.getElementById('post').innerHTML = DOMPurify.sanitize(html);
+        } else { // .html file with embedded markdown or plain html
+          document.getElementById('post').innerHTML = text;
+          // optionally find elements with markdown and call marked.parse on them
+        }
+      })
+      .catch(e => document.getElementById('post').innerText = 'Failed to load post.');
+  </script>
+</body>
+</html>
