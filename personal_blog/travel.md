@@ -42,3 +42,21 @@ Most people that I know are taking a break from skiing to watch football today s
 I also noticed a good bit of large promotions in sports betting ads that I would see in the football my friends were watching. Exploiting these promotions to give myself arb or a positive EV to finance my future travels seems like a valuable excercise dealing with variance and market mechanics leading into my trading job. 
 
 I am fully aware that these promotions are designed to get people hooked on gambling and I am confident that I can analyze and intellectualize these bets to the point were it will feel like homework thus taking the addictive thrill out of gambling. Also since I intend to view this as an academic excercise I will likely be gambling on events that are more obscure which I do NOT plan to watch, unless I can find a compelling reason to bet on popular events(i.e tighter spreads). This will likely also cut down on the addictivness of the gambling and even if these bets are being placed on popular events like the super bowl I plan to arb out any risk so that I am hedged given the outcome and I only collect the edge that is guaranteed from my strategy. This strategy will only work while I am in Colorado since gambling on these sites are only legal in certain states, so after a month, when I leave Colorado, I must cash out and stop sports bettin. This will likely give me enough time to exploit the new "customer" offers and not give enough time for the gambling sites to catch on to my activities and thus ban me. I will publish my strategy and thoughts in a technical blog post, so look there if you would like to see more about my approach to this. 
+
+### January 5 2026 - Monday
+
+Decent out on the mountain. I was able to hitch a ride to and from the mountain around the beginning and end of the day so I spent the whole day snowboarding and listening to 'flash boys' on audio book. It's just nerdy enough to stop me from giving off any cool ski bum vibes. My friends and I went to a local steakhouse, Quicy's, and had an incredible meal for like 30$ with watermelon margaritas that were unnecessarily good. The restuarant had one thing on the menu: Steak. The menu did give us the option of 4 sizes, how well done we want it, and that was it. The cut of steak is determined by the weekday and that is my favorite type of restuarant.  
+
+### January 6 2026 - Tuesday
+
+It was still my friend's weekend and it snowed the night before so everyone was excited to go to the mountain and enjoy the 'pow day'. I enjoyed the powder and got worked super hard going over moguls. I then let myself get talked into going to another local restuarant, The Famous. This is one of my favorite Italian restuarants(including the one's I visited in Italy). It was a good meal even though I was sore I got to come home and fall off rainbow road while playing Mario Kart with the roommates of where I was staying.
+
+### January 7 2026 - Wednesday
+
+I was sore and had plenty of skiing so I skipped going to Copper Mountain. I decided to actual implement the sports betting arbitraging strategy to exploit new player promotions. It was pretty scary moving around the amount of money that I was moving, but I ended up making a tidy profit on a few promos.
+
+ I also got more comfortable making smaller plays for little bits of arbitrage across sites which is good because I am going to need to make much bigger plays with some of the larger promos before these sites figure out what I am doing and ban me. My goals are to analyze data to find a way to smartly gamble short parlay's which these sites like to advertise a lot because parlays make a lot of money for these sites(and lose a lot for their customers). I also want to find a scheme for trading live. Live trading seems more risky as the numbers are moving constantly and execution speed is both crutial and limited, but it would be a good excercise. I will not trade anything besides arbitrage on promos until I thoroughly understand these other bet types and make a technical post about it.
+
+### January 8 2026 - Thursday
+
+Should be a default day. I wake up, go to a coffee shop, snowboard a little, hitch a ride back to Leadville, do some coding or math and see what happens tomorrow. 
