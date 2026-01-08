@@ -96,3 +96,21 @@ footer { padding: 60px 0; text-align: center; color: var(--secondary); font-size
 .post-links .read-more {
     font-size: 0.95rem;
 }
+
+/* Global link styling */
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:visited {
+    color: var(--accent);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    color: var(--accent);
+}
