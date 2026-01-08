@@ -114,3 +114,7 @@ a:hover {
 a:active {
     color: var(--accent);
 }
+
+nav a:visited {
+    color: var(--text);
+}

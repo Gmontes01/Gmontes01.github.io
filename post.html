@@ -14,7 +14,7 @@
   <script>
     const file = new URLSearchParams(location.search).get('file');
     if (!file) document.getElementById('post').innerText = 'No file specified.';
-    else fetch(file)
+    else fetch(file + '?v=' + Date.now())
       .then(r => r.text())
       .then(text => {
         if (file.endsWith('.md')) {
