@@ -71,7 +71,7 @@ or simply
 $$
 Y > X
 $$
-. From my experience and intuition, it would make sense for sports books not to arb themselves so I simply don't expect this to every occur on a single sportsbook and I would also expect sports books to typically give themselves enough edge so that it would at least be rate for this to occur across sports books.
+. From my experience and intuition, it would make sense for sports books not to arb themselves so I simply don't expect this to ever occur on a single sportsbook. I would also expect sports books to typically give themselves enough edge so that it would at least be rare for this to occur across sports books.
 
 
 ### Extracting Implied Probabilities
@@ -179,7 +179,7 @@ Prediction markets like Kalshi and Polymarket are making waves in the finance an
 
 When looking at my arbitrage strategy I found that the tightest markets for me to hedge my bets was on prediction markets. The way these markets work is that you are able to buy contracts for events which pay out one unit(dollar) upon the event taking place. This event can be Jerome Powell saying a specific word during FOMC, a team winning a sports bet, or China invading Taiwan by a specific date.
 
-These markets work by allow individuals to buy and sell these events at a specific price normally <1. These markets are free to participate in, most likely because the main mechanism of these markets is not to extract edge out of its users like sportsbooks but to provide data representing public sentiment on the likelyhood of an event occurring thus giving the best proxy for the likelihood of said event occuring. This works by exploiting the idea of wisdom of the crowd giving trustworthy public opinion on these events.
+These markets work by allow individuals to buy and sell these events at a specific price normally <1. These markets are free to participate in, most likely because the main mechanism of these markets is not to extract edge out of its users like sportsbooks but to provide data representing public sentiment on the likelihood of an event occurring thus giving the best proxy for the likelihood of said event occuring. This works by exploiting the idea of wisdom of the crowd giving trustworthy public opinion on these events.
 
 Say Georgia Tech is playing U(sic)GA in a basketball game and GT is the heavy favorite. In this specific instance the market determines that the value of a 1 dollar payout upon GT's winning is 90 cents. This gives an implied 90% chance that GT will win the game since market forces deem selling GT for any price above 90 cents as having edge and buying GT at any price below 90 cents as also having edge, so intuitively 90 cents is where the EV of the trade is 0 and thus gives a fair value.
 
