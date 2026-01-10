@@ -59,4 +59,8 @@ I was sore and had plenty of skiing so I skipped going to Copper Mountain. I dec
 
 ### January 8 2026 - Thursday
 
-Should be a default day. I wake up, go to a coffee shop, snowboard a little, hitch a ride back to Leadville, do some coding or math and see what happens tomorrow. 
+The plan was, I wake up, go to a coffee shop, snowboard a little, hitch a ride back to Leadville, do some coding or math. I went to City on a Hill, snowboarded for about 2 or 3 hours. I went off my first park jump with the technique of a 5 year old. Then I did some normal snowboarding and had a pretty bad fall. I was going around 20-25mph by my guess and I must have caught my front edge trying a little ollie and suddenly I was sliding face down on some packed snow with my limbs making a huge X with my body. The fall shook me a bit and was unpleasant, but after the 5 seconds of gliding on the snow I checked my body and had no sharpe pains and was a little worried about hitting my head on the snow. Every check I did on myself told me I didn't have a concussion so I was fine and I had a little bit of pain on my left wrist, but nothing bad.
+
+I then went on a ride along with my friend in one of his snowcats and got to see what he does for work after the mountain closed. Specialized heavy machinery is alwasy pretty cool to see, and it had bluetooth so we could listen to Japanese learning podcasts through his shift like it was a road trip. My wrist started feeling worse and worse as the shift continued to the point that I was worried it was broken afterwards.
+
+### January 9 2026
