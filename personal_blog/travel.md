@@ -61,6 +61,28 @@ I was sore and had plenty of skiing so I skipped going to Copper Mountain. I dec
 
 The plan was, I wake up, go to a coffee shop, snowboard a little, hitch a ride back to Leadville, do some coding or math. I went to City on a Hill, snowboarded for about 2 or 3 hours. I went off my first park jump with the technique of a 5 year old. Then I did some normal snowboarding and had a pretty bad fall. I was going around 20-25mph by my guess and I must have caught my front edge trying a little ollie and suddenly I was sliding face down on some packed snow with my limbs making a huge X with my body. The fall shook me a bit and was unpleasant, but after the 5 seconds of gliding on the snow I checked my body and had no sharpe pains and was a little worried about hitting my head on the snow. Every check I did on myself told me I didn't have a concussion so I was fine and I had a little bit of pain on my left wrist, but nothing bad.
 
-I then went on a ride along with my friend in one of his snowcats and got to see what he does for work after the mountain closed. Specialized heavy machinery is alwasy pretty cool to see, and it had bluetooth so we could listen to Japanese learning podcasts through his shift like it was a road trip. My wrist started feeling worse and worse as the shift continued to the point that I was worried it was broken afterwards.
+I then went on a ride along with my friend in a snowcat and got to see what he does for work after the mountain closed. Specialized heavy machinery is alwasy pretty cool to see, and it had bluetooth so we could listen to Japanese learning podcasts through his shift like it was a road trip. My wrist started feeling worse and worse as the shift continued to the point that I was worried it was broken by the time I went to bed.
 
 ### January 9 2026
+
+I spent the day in and did not go snowboarding to let my wrist heal. I worked on my sports betting arbitrage blog and executing my arbitrage strategy. My wrist healed surprisingly quickly making me hopefuly that the injury is just a sprain and that it will be all healed up in time for my upcoming trip to Japan. I tried going for a run, but quickly post poned those plans after feeling the 0 degree air temp.
+
+### January 10 2026
+
+I woke up earlier than the day before, arbed a few sportsbook promos and went to my cafe to write here. Wrist feels better and I will test it out tomorrow morning to see if it healed. 
+
+### January 11 2026
+
+I also stayed in a coded. I spent time looking at my sports betting promo strategy and did some leetcode and went for a run. Altitude was no joke.
+
+### January 12 2026 
+
+I went snowboarding today. I was able to hitch a ride there and back. I did not take as many risks, so it was not as fun when I feel myself pushing my limits. I think I just need to snowboard more to get comfortable pushing myself again. 
+
+### January 13 2026 - Tuesday 
+
+I slept bad the night before so I did not snowboard because I am especially scared about injuring myself after this scare with my wrist. All but one of the people living in the house where I am staying are gone, so I spent most of the day with them and went to trivia at a local bar. I met some locals, both of which are in a run club so I will try and join them next week. 
+
+### January 14 2026 - Wednesday 
+
+I have some big positions that I need take out in my sports betting system. For those that don't read the technical posts, I did the math so I am guaranteed payout if I do things right. I am going to optimize myself so that I do not mess things up, meaning I am most likely not going to make it snowboarding. 
