@@ -85,4 +85,15 @@ I slept bad the night before so I did not snowboard because I am especially scar
 
 ### January 14 2026 - Wednesday 
 
-I have some big positions that I need take out in my sports betting system. For those that don't read the technical posts, I did the math so I am guaranteed payout if I do things right. I am going to optimize myself so that I do not mess things up, meaning I am most likely not going to make it snowboarding. 
+Nothing special
+
+### January 15 2026 - Thursday 
+
+Woke up, went snowboarding for a bit. Snow was hard and icy. I went over a rock and had a goofy wipe out. Thankfully, myself and the board were not damaged.
+
+### January 16 2026 - Friday
+
+Temperature was in the single digits to teens not accounting for windchill. There was no snow fall making this the worst year ever recorded at Copper Mountain for snowfall which is really important for skiing. It was also overcaste giving what is called 'flat light'. Flat light just means that the sunlight is not strong enough to give shadows on the snow when you are riding, making the ground look like a plain sheet of white with no detechtable features. This can be pretty dangerous to not be able to make out features in the snow when you are riding and can hit a random drop, groove, or jump. 
+
+Needless to say, I opted against riding and just stayed in and played a little chess. 
+

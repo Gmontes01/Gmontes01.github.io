@@ -265,8 +265,15 @@ $$
 \mathbb{E}_{implied}[contract_+] = 0 = (1)\cdot p_+ + (0)\cdot (1 - p_+) = p_+
 $$
 
+This creates a very intuitive framework for valuing these contracts and analyzing the effects of buying a contract without dealing with the non-linearities that were seen in the American odds when trying to interpret it mathematically. This also gives a 1 to 1 mapping between the value of a contract and the probability of its associated event taking place and an intuition for the market that these prediction markets facilitate. 
 
-Because of technically advanced market makers like SIG taking a role in these prediction markets, we can generally assume these markets to be arbitrage free since HFT/quant firms can be thought to acts as enforcing market efficiency. Because of this you can generally expect to buy covering sets of the future at at least a dollar and sell covering sets of the future at at most a dollar because these markets typically have some non-zero spread in them.
+Suppose someone believes that there is an 80% chance of the Atlanta Hawks beating the Boston Celtics in a game and the Atlanta Hawks winning is trading at 75 cents. This individual can instantly and easily compute that a contract for the Atlanta Hawks winning is then worth 80 cents, and they can buy it for 75 cents. This presents presents an opportunity to make money by making 5 cents of believed edge in the game by buying the contract which is worth 80 cents for 75 cents. Conversely, the individual trading on their belief also moves the market to be more in accordance with their belief of the outcome of the game. Conversely, if the analyst believes that there is a 70% chance of the Hawks winning then they can also sell contracts for 75 cents to gain 5 cents of edge.
+
+This aggregation of opinions allows for the emergence of the 'wisdom of the crowd' which is often seen to be a surprisingly accurate proxy for measuring uncertain values. The best example of this phenomena is competitions where people need to guess the number of jelly beans that are in a jar to win some prize. Statisticians regularly find that while individual guesses can have high variance and are usually very wrong, the average of the group's guesses end up being remarkably close to the true value.
+
+From this example, we gain a better intuition for the value of computing the implied probability of any wager. When buying a contract or wager it is now intuitive that you want to see a smaller implied probability of the event ocurring to get yourself a better deal when you buy. Assuming we can only occupy the buying side of a contract in sports books we are now looking for instances that decrease the implied probability of the event ocurring and thus giving us a better deal and presenting edge.
+
+
 
 ### Hedging bets using Prediction Markets
 
@@ -294,13 +301,69 @@ $$
 B + p_{-}\cdot(B + \frac{A}{100}\cdot B) > B + \frac{A}{100}\cdot B
 $$.
 
+Because of technically advanced market makers like SIG taking a role in these prediction markets, we can generally assume there to be no arbitrage opportunities across markets since HFT/quant firms generally act to enforce market efficiency. Because of this, you can generally expect to buy covering sets of the future at at least a dollar and sell covering sets of the future at at most a dollar because these markets typically have some non-zero spread in them.
+
 ### When to Hedge
 
-Because the profit incentive of sportsbook is to facilitate bets with an edge to the sportsbook, it is common for these sports books to try and entice players to begin gambling on their books using one time promotions that give up a little bit of edge in the expectation that repeated gambler will continually pay back the amount of edge that the sportsbook gives to entice their business. These deals are typically offered in 3 main types of promotions.
+Because the profit incentive of sportsbook is to facilitate bets with an edge to the sportsbook, it is common for these sports books to try and entice players to begin gambling on their books using one time promotions that give up some edge in the expectation that repeated gambler will pay back the amount of edge that the sportsbook gives to entice their business. These deals are typically offered in 3 main types of promotions.
 $$
 \text{profit boosting} \\
 \text{insurance} \\
 \text{free bets}
 $$
+
+#### Bonus Bets
+
+Many sports betting sites have enticing and simple sounding advertisments that claim "do this and claim several hundered dollars in bonus bets". These bonus bets are often denoted in some play currency with the sports book that have heavy restrictions applying to them, such as you cannot simply withdraw the bonus bets and close your account to get free money; you need to actually gamble with the bonus bets. We need to think a little harder to get the actual value out of the bonus bets.
+
+Another significant restriction that applies when valuing bonus bets, is that wagers made using bonus bets do not pay back the value of the initial wager like what is normally assumed. So making a wager of $B bonus bucks with odds +A for event '+' we model the wager as having no cost so it is model like so.
+
+$$
+f^{+}_{bonus}(B) = \begin{cases}
+ B\cdot(\frac{A}{100}) & \text{if +} \\
+0 & \text{if -}
+\end{cases}
+$$
+
+We can compute the expected value of this $B sized wager as 
+
+$$
+\mathbb{E}_{implied}[f^{+}_{bonus}(B)] = p_+\cdot B\cdot(\frac{A}{100}) \\ = \frac{100}{A+100}\cdot B\cdot(\frac{A}{100}) = \frac{A}{100 + A}\cdot B
+$$
+
+Intuitively A is in the range of positive numbers and without even needing to differentiate, upon inspection you can take the limit that as $A\rightarrow\infty$, $\mathbb{E}_{implied}[f^{+}_{bonus}(B)]\rightarrow B$ which is the upper bound for the expected value of a wager with bonus bucks. This result suggests that we get more value of bonus bucks with longer positions in the sportsbook.
+
+Now consider hedging out a bonus bet to eliminate the variance of your position. Here we buy $B\cdot(\frac{A}{100})$ contracts in a prediction market against the position that we took out at an assumed cost of $p_-\cdot 100$ cents per contract. These contracts then give us the payout function
+
+$$
+g^-_{hedge}(p_-\cdot B\cdot(\frac{A}{100})) = \begin{cases}
+ 0 & \text{if +} \\
+B\cdot(\frac{A}{100}) & \text{if -}
+\end{cases}
+$$
+
+giving a combined payout 
+$$
+f^{+}_{bonus}(B) + g^-_{hedge}(p_-\cdot B\cdot(\frac{A}{100})) = B\cdot(\frac{A}{100}) = \begin{cases}
+ B\cdot(\frac{A}{100}) & \text{if +} \\
+B\cdot(\frac{A}{100}) & \text{if -}
+\end{cases}
+$$
+
+at a cost of 
+$$
+p_-\cdot B\cdot(\frac{A}{100}) = \frac{A}{100}\cdot\frac{A}{100+A}\cdot B
+$$
+.
+
+Thus the total value of our bonus bet when hedged with perfect efficiency is 
+$$
+B\cdot(\frac{A}{100}) - \frac{A}{100}\cdot\frac{A}{100+A}\cdot B = B\cdot\frac{A}{100}\cdot(1 - \frac{A}{100+A}) = B\cdot\frac{A}{100+A}
+$$
+
+In practice, I found that I can generally conver bonus bets using this strategy with a conversion rate of approximately 0.6 on average. This informs my hedging procedure with insured bets.
+
+#### Insured bets
+
 
 
