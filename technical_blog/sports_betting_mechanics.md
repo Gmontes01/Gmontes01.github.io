@@ -1,5 +1,7 @@
  # The Mechanics of Gambling
 
+ *draft
+
  Sports books offer many events that can be bet on. Really anything in sports that can be quantified like an individual's scores, yards gained by an individual or team, position in an overall ranking, and of course the binary 'will this team/person win?' is something that sports books want to have people gambling on. 
 
  When gambling on an event you are given 'odds' which describe your potential winnings if your bet pays off and you always lose your initial bet is it does not. I will focus on American odds, which are most relevant to me, and maybe delve into European, Asian, and prediction market odds if I see their relevance. 
@@ -50,41 +52,50 @@ $$
 
 Ultimately, the goal of converting these odds is to be able to make a better comparison between the odds so we can compare the positive odds to positive odds instead of having to consider positive odds to negative odds. 
 
-### Finding Arbitrage in the Odds
-
-Consider a bet on a game where either team A or B will win with -X and +Y odds respectivly, and there are no ties allowed. We can try and create an arbitrage portfolio of bets where you bet $X$ dollars on team A and $\frac{100\cdot X}{Y}$ dollars on team B. We can describe our net profit with a function 
+###  Bets as Piecewise functions
+To try and describe combining wagers lets define them as a payout function dependent on the state of the world in the future where we will describe a +Y bet of size S on team A as a bet that has cost of S and a payout function of 
 
 $$
-f(bet) = \begin{cases}
- 100 - \frac{100\cdot X}{Y} & \text{team A wins} \\
-\frac{100\cdot X}{Y}\cdot \frac{Y}{100} - X & \text{team B wins}
+f_{\text{team A}}^{+Y}(S)=\begin{cases}
+S\cdot(1 + \frac{Y}{100}) & \text{team A wins} \\
+0 & \text{team A loses}
 \end{cases}
 $$
 
-which gives us 0 in the case when team B wins so if that setup gives any profit when team A wins then we have arbitrage. This is simply evaluated as checking if 
-$$
-100 > 100\frac{X}{Y}
-$$
-
-or simply
+and conversely if team B has -X odds then for a bet of the same size we will notate the bet as a payoff function
 
 $$
-Y > X
-$$
-. From my experience and intuition, it would make sense for sports books not to arb themselves so I simply don't expect this to ever occur on a single sportsbook. I would also expect sports books to typically give themselves enough edge so that it would at least be rare for this to occur across sports books.
+f_{\text{team B}}^{-X}(S)=\begin{cases}
+S\cdot(1 + \frac{100}{X}) & \text{team A wins} \\
+0 & \text{team A loses}
+\end{cases}
+$$.
+
 
 
 ### Extracting Implied Probabilities
 
-Since I have spent more time studying probabilities than gambling, it is useful to try and think about how these odds translate into implied probabilities. 
+Since I have spent more time studying probabilities than gambling, it is useful to try and think about how these odds translate into implied probabilities. To get implied probabilities we need to look at the profit function which we can notate similarly 
+
+$$
+\Pi_{\text{team A}}^{+Y} = f_{\text{team A}}^{+Y}(S) - S = \begin{cases}
+S\cdot(\frac{Y}{100}) & \text{team A wins} \\
+-S & \text{team A loses}
+\end{cases}
+$$
 
 Assuming a zero expectation of each sports bet(which is a generous assumption) we derive the equation for implied probabilities for an underdog +Y bet being
 
 $$
-\mathbb{E}[bet^+_{100}] = p_{implied}^+ \cdot Y - (1-p_{implied}^+)\cdot 100 = 0
+\mathbb{E}[\Pi_{\text{team A}}^{+Y}] = p_{implied}^+ \cdot \frac{S}{100}\cdot ( Y) - (1-p_{implied}^+)\cdot S = 0
 $$
 
 implying 
+
+$$
+p_{implied}^+ \cdot (\frac{S}{100}\cdot Y + S) = S\\
+$$
+giving 
 
 $$
 p_{implied}^+ = \frac{100}{100 + Y}
@@ -96,13 +107,16 @@ $$
 p_{implied} = \frac{\text{stake}}{\text{total payout}}
 $$
 
-Since we are now only thinking in terms of positive bets we can convert the implied probability of a -X bet to get implied odds of the favorite side of the bet, notate with a '-', to win as
+Since we are now only thinking in terms of positive bets we can convert the implied probability of a -X bet to get implied odds of the favorite side of the bet as
 
 $$
 p_{implied}^- = \frac{100}{100 + \frac{10,000}{X}} = \frac{X}{X + 100}
 $$
 
-### American Odds and probability
+### American Odds and probabilities
+
+\#continue revising here
+
 We would expect the sportsbooks to take a percentage of edge in these bets thus making us expect that the actual expectations of each bet to be slightly below zero in reality. Consider making a bet with American odds +Y.
 
  Here we can use this idea to give us a kind of efficient market hypothesis of the sportsbook assuming no arbitrage. Thus giving us
@@ -275,7 +289,7 @@ From this example, we gain a better intuition for the value of computing the imp
 
 
 
-### Hedging bets using Prediction Markets
+### Describing bets for prediction markets
 
 As a finance student, I have developed the intuition to fight against variance of any given financial position. To minimize variance, the strategy I will use will be to hedge all bets that I make in sports books with contrary positions in prediction markets. 
 

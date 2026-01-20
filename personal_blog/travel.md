@@ -97,3 +97,16 @@ Temperature was in the single digits to teens not accounting for windchill. Ther
 
 Needless to say, I opted against riding and just stayed in and played a little chess. 
 
+### January 17 2026 - Saturday
+
+Went skiing with a one of the roommates
+
+### January 18 2026 - Sunday
+
+Went skiing with some of the roommates and a new roommates new situationship. This gave me a courtside seat to the small town drama that is going on. 
+
+### January 19 2026 - Monday
+
+Went Skiing with dudes that live in Leadville. Ended the night going to a local steakhouse then going to a camp fire.
+
+### January 20 2026 - Tuesday
