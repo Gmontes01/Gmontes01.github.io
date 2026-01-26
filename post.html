@@ -15,7 +15,7 @@
         inlineMath: [['$', '$'], ['\\(', '\\)']],
         displayMath: [['$$', '$$'], ['\\[', '\\]']],
         processEscapes: true,
-        processEnvironments: true // Required for \begin{cases}
+        processEnvironments: true
       },
       options: {
         skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
@@ -41,7 +41,7 @@
   </nav>
 
   <main class="container">
-    <article id="post">Loading technical content...</article>
+    <article id="post">Loading content...</article>
   </main>
 
   <script>
@@ -50,33 +50,30 @@
     if (!file) {
         document.getElementById('post').innerText = 'No file specified.';
     } else {
-        // Fetching with cache-busting to ensure latest content
         fetch(file + '?v=' + Date.now())
-          .then(r => {
-              if (!r.ok) throw new Error("File not found");
-              return r.text();
-          })
+          .then(r => r.ok ? r.text() : Promise.reject("File not found"))
           .then(text => {
-            // Convert Markdown to HTML string
-            let rawHtml = marked.parse(text);
-            
-            // Fix for [object Object] error in newer Marked.js versions
-            if (typeof rawHtml !== 'string') {
-                rawHtml = rawHtml.toString();
-            }
-            
-            // Sanitize HTML and inject into the page
-            const cleanHtml = DOMPurify.sanitize(rawHtml);
-            document.getElementById('post').innerHTML = cleanHtml;
+            // THE FIX: Use marked.parse directly and handle the output correctly
+            const htmlOutput = marked.parse(text);
 
-            // Trigger MathJax typeset after content is in the DOM
+            // If it returns a Promise (some versions do), we handle it. 
+            // If it returns a string, we use it.
+            return (htmlOutput instanceof Promise) ? htmlOutput : Promise.resolve(htmlOutput);
+          })
+          .then(rawHtml => {
+            // Ensure we are dealing with a string
+            const finalHtml = (typeof rawHtml === 'string') ? rawHtml : JSON.stringify(rawHtml);
+            
+            // Sanitize and Inject
+            document.getElementById('post').innerHTML = DOMPurify.sanitize(finalHtml);
+
+            // Trigger MathJax
             if (window.MathJax && window.MathJax.typesetPromise) {
-                window.MathJax.typesetPromise([document.getElementById('post')])
-                    .catch((err) => console.log('MathJax error:', err));
+                window.MathJax.typesetPromise([document.getElementById('post')]);
             }
           })
           .catch(e => {
-            document.getElementById('post').innerText = 'Failed to load post. Error: ' + e.message;
+              document.getElementById('post').innerText = 'Error: ' + e;
           });
     }
   </script>
@@ -86,6 +83,5 @@
           <p>&copy; 2026 Gabriel Montes</p>
       </div>
   </footer>
-
 </body>
 </html>
