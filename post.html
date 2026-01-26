@@ -1,98 +1,91 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gabriel Montes | Technical Post</title>
-  <link rel="stylesheet" href="style.css">
-  
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
-  
-  <script>
-    window.MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']],
-        processEscapes: true,
-        processEnvironments: true
-      },
-      options: {
-        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-      }
-    };
-  </script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Montes | Post Viewer</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
-  <nav>
-      <div class="container">
-          <a href="index.html" class="logo-link" style="text-decoration: none;">
-              <span class="logo">G.MONTES</span>
-          </a>
-          <ul>
-              <li><a href="index.html">About</a></li> 
-              <li><a href="experience.html">R&eacute;sum&eacute;</a></li>
-              <li><a href="technical_blog.html">Technical Blog</a></li>
-              <li><a href="personal_blog.html">Personal Blog</a></li>
-          </ul>
-      </div>
-  </nav>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo-link" style="text-decoration: none;">
+                <span class="logo">G.MONTES</span>
+            </a>
+            <ul>
+                <li><a href="index.html">About</a></li> 
+                <li><a href="experience.html">R&eacute;sum&eacute;</a></li>
+                <li><a href="technical_blog.html">Technical Blog</a></li>
+                <li><a href="personal_blog.html">Personal Blog</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  <main class="container">
-    <article id="post">Loading content...</article>
-  </main>
+    <main class="container">
+        <article id="markdown-content">Loading content...</article>
+    </main>
 
-  <script>
-    const file = new URLSearchParams(location.search).get('file');
-    
-    if (!file) {
-        document.getElementById('post').innerText = 'No file specified.';
-    } else {
-        fetch(file + '?v=' + Date.now())
-          .then(r => r.ok ? r.text() : Promise.reject("File not found"))
-          .then(text => {
-            // STEP 1: Protection Loop
-            // We tell marked to treat $...$ and $$...$$ as plain text blocks
-            // so it doesn't parse underscores or backslashes inside them.
-            marked.use({
-              extensions: [{
-                name: 'math',
-                level: 'inline',
-                start: (src) => src.indexOf('$'),
-                tokenizer(src) {
-                  const match = /^\$\$[\s\S]+?\$\$|^\$[\s\S]+?\$|^\$[^$\n]+?\$/.exec(src);
-                  if (match) {
-                    return { type: 'math', raw: match[0], text: match[0] };
-                  }
-                },
-                renderer(token) { return token.text; }
-              }]
-            });
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const fileName = urlParams.get('file');
 
-            // STEP 2: Render Markdown
-            const rawHtml = marked.parse(text);
-            
-            // STEP 3: Sanitize and Inject
-            // We allow MathJax tags to persist through sanitization
-            document.getElementById('post').innerHTML = DOMPurify.sanitize(rawHtml);
+        if (!fileName) {
+            document.getElementById('markdown-content').innerHTML = "<p>No file specified.</p>";
+        } else {
+            fetch(fileName + '?v=' + Date.now())
+                .then(response => {
+                    if (!response.ok) throw new Error("File not found");
+                    return response.text();
+                })
+                .then(text => {
+                    const mathBlocks = [];
+                    
+                    // 1. Protection: Find all math and replace with placeholders
+                    // This prevents marked.js from seeing the LaTeX backslashes/underscores
+                    const protectedText = text.replace(/(\$\$[\s\S]+?\$\$|\$[\s\S]+?\$)/g, (match) => {
+                        const placeholder = `__MATH_BLOCK_${mathBlocks.length}__`;
+                        mathBlocks.push(match);
+                        return placeholder;
+                    });
 
-            // STEP 4: Trigger MathJax
-            if (window.MathJax && window.MathJax.typesetPromise) {
-                window.MathJax.typesetPromise([document.getElementById('post')]);
-            }
-          })
-          .catch(e => {
-              document.getElementById('post').innerText = 'Error: ' + e;
-          });
-    }
-  </script>
+                    // 2. Render Markdown on the shielded text
+                    let html = marked.parse(protectedText);
 
-  <footer>
-      <div class="container">
-          <p>&copy; 2026 Gabriel Montes</p>
-      </div>
-  </footer>
+                    // 3. Restoration: Put the math back in
+                    mathBlocks.forEach((math, index) => {
+                        html = html.replace(`__MATH_BLOCK_${index}__`, math);
+                    });
+
+                    // 4. Inject into DOM
+                    document.getElementById('markdown-content').innerHTML = html;
+
+                    // 5. Trigger MathJax to typeset the newly added content
+                    if (window.MathJax && window.MathJax.typesetPromise) {
+                        window.MathJax.typesetPromise();
+                    }
+                })
+                .catch(err => {
+                    document.getElementById('markdown-content').innerHTML = `<p>Error loading post: ${err.message}</p>`;
+                });
+        }
+    </script>
+
 </body>
 </html>

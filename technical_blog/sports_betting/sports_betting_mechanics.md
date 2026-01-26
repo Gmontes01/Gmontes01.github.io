@@ -12,9 +12,9 @@
 
  When gambling in America you will see a board that is similar to here. 
  
-  ![alt text](image.png)
+ ![alt text](image.png)
   
-  Lets break down what it means so we can appropriately analyze the payouts and costs of the wagers. Look at the betting opportunities and don't worry about the 'Spread', 'Total', and 'Money' aspects but just notice that each option in this advertised matrix gives odds looking like '-110', '-10,000', and '+2,000'.
+ Lets break down what it means so we can appropriately analyze the payouts and costs of the wagers. Look at the betting opportunities and don't worry about the 'Spread', 'Total', and 'Money' aspects but just notice that each option in this advertised matrix gives odds looking like '-110', '-10,000', and '+2,000'.
 
  Given some binary event $A$ we will notate the event that $A$ happens as $A^+$ and $A$ does not happen as $A^-$. We can say $A$ represents a fighter winning a fight, a team losing a football game, a basketball player scoring more than 7.5 three pointers, or someone streaking at the Super Bowl. These events will be given odds where a plus notates how much a gambler profits from a \$100 bet and negative notates how much is necessary for someone to bet to win \$100 if the bet pays off. An important feature of these odds too is that they are linear, so if you have a '+200' for \$150 then a win on that bet will get you \$300. 
 
@@ -48,17 +48,11 @@ Ultimately, the goal of converting these odds is to be able to make a better com
 
 To try and describe combining wagers lets define them as a payout function dependent on the state of the world in the future. Consider a game where team A plays against team B and one team must win and the other must lose. We will describe a +Y bet of size S on team A as a bet that has cost of S and a payout function of 
 
-$$f_{\text{team A}}^{+Y}(S)=\begin{cases}
-S\cdot(1 + \frac{Y}{100}) & \text{team A wins} \\
-0 & \text{team A loses}
-\end{cases}$$
+$$f_{\text{team A}}^{+Y}(S)=\begin{cases} S\cdot(1 + \frac{Y}{100}) & \text{team A wins} \\ 0 & \text{team A loses} \end{cases}$$
 
 and conversely if team A is playing against team B which has -X odds then for a bet of the size S for team B we will notate the bet as a payoff function
 
-$$f_{\text{team B}}^{-X}(S)=\begin{cases}
-0 & \text{team A wins} \\
-S\cdot(1 + \frac{100}{X}) & \text{team A loses}
-\end{cases}$$
+$$f_{\text{team B}}^{-X}(S)=\begin{cases} 0 & \text{team A wins} \\ S\cdot(1 + \frac{100}{X}) & \text{team A loses} \end{cases}$$
 
 with the same cost S.
 
@@ -66,10 +60,7 @@ with the same cost S.
 
 Since I have spent more time studying probabilities than gambling, I try and think about how these odds translate into implied probabilities. To get implied probabilities we need to look at the profit function which we can notate as such 
 
-$$\Pi_{\text{team A}}^{+Y}(S) = f_{\text{team A}}^{+Y}(S) - S = \begin{cases}
-S\cdot(\frac{Y}{100}) & \text{team A wins} \\
--S & \text{team A loses}
-\end{cases}$$
+$$\Pi_{\text{team A}}^{+Y}(S) = f_{\text{team A}}^{+Y}(S) - S = \begin{cases} S\cdot(\frac{Y}{100}) & \text{team A wins} \\ -S & \text{team A loses} \end{cases}$$
 
 Assuming a zero expectation of each sports bet(which is a generous assumption) we derive the equation for implied probabilities for an underdog +Y bet being
 
@@ -131,10 +122,7 @@ Of course, if the event is certain to occur or not then there is no reason to tr
 
 This functions by creating a free market, similar in structure to financial markets of assets, where people are allowed to trade contracts of events which pay out \$1 if the event occurs or worthless if the event does not. Here is the payout structure for a single contract for an event A taking place.
 
-$$g(contract_A) = \begin{cases}
- 1 & \text{event }A \\
-0 & \text{event }A^c
-\end{cases}$$
+$$g(contract_A) = \begin{cases} 1 & \text{event }A \\ 0 & \text{event }A^c \end{cases}$$
 
 This may be trivial given the description, but this also gives us an intuition for how the market belief of the likelihood of the event + taking place since we can see that buying and selling will intuitively reach an equilibrium when the market does not believe the current price is worth buying above the price or selling below the current price then the expected value of a contract has an implied exprected value of 0, giving
 
@@ -146,17 +134,11 @@ As a finance student, I have developed the intuition to fight against variance o
 
 We can model a position in a prediction market for the outcome A with C contracts as the function below
 
-$$g_{A}(C) = \begin{cases}
- C & \text{if }A \\
-0 & \text{if }A^c
-\end{cases}$$
+$$g_{A}(C) = \begin{cases} C & \text{if }A \\ 0 & \text{if }A^c \end{cases}$$
 
 having a cost of $p_{+}\cdot C$ and for the same size with B contracts we have a payout function 
 
-$$g_{A^c}(C) = \begin{cases}
- 0 & \text{if }A \\
-C & \text{if }A^c
-\end{cases}$$
+$$g_{A^c}(C) = \begin{cases} 0 & \text{if }A \\ C & \text{if }A^c \end{cases}$$
 
 at a cost of $p_{-}\cdot C$. Notice that to prevent arbitrage 
 
@@ -168,9 +150,7 @@ Because of technically advanced market makers like SIG taking a role in these pr
 
 Because the profit incentive of sportsbook is to facilitate bets with an edge to the sportsbook, it is common for these sports books to try and entice players to begin gambling on their books using one time promotions that give up some edge in the expectation that repeated gambler will pay back the amount of edge that the sportsbook gives to entice their business. These deals are typically offered in 3 main types of promotions.
 
-$$\text{profit boosting} \\
-\text{insurance} \\
-\text{free bets}$$
+$$\text{profit boosting} \\ \text{insurance} \\ \text{free bets}$$
 
 #### Bonus Bets
 
@@ -178,10 +158,7 @@ Many sports betting sites have enticing and simple sounding advertisments that c
 
 Another significant restriction that applies when valuing bonus bets, is that wagers made using bonus bets do not pay back the value of the initial wager like what is normally assumed. So making a wager of \$S bonus bucks with odds +Y for event A we model the wager as having no cost so it is model like so.
 
-$$h^{+Y}_{A}(S) = \begin{cases}
- S\cdot(\frac{Y}{100}) & \text{if }A \\
-0 & \text{if }A^c
-\end{cases}$$
+$$h^{+Y}_{A}(S) = \begin{cases} S\cdot(\frac{Y}{100}) & \text{if }A \\ 0 & \text{if }A^c \end{cases}$$
 
 We can compute the expected value of this \$B sized wager by computing the expectation of its profit as
 
@@ -191,17 +168,11 @@ Intuitively A is in the range of positive numbers and without even needing to di
 
 Now consider hedging out a bonus bet to eliminate the variance of your position. Here we buy $S\cdot(\frac{A}{100})$ contracts in a prediction market against the position that we took out at an assumed cost of $p_-\cdot 100$ cents per contract. These contracts then give us the payout function
 
-$$g_{A^c}(S\cdot(\frac{A}{100})) = \begin{cases}
- 0 & \text{if +} \\
-S\cdot(\frac{A}{100}) & \text{if -}
-\end{cases}$$
+$$g_{A^c}(S\cdot(\frac{A}{100})) = \begin{cases} 0 & \text{if +} \\ S\cdot(\frac{A}{100}) & \text{if -} \end{cases}$$
 
 giving a combined payout 
 
-$$h^{+Y}_{A}(S) + g_{A^c}(S\cdot(\frac{A}{100})) = S\cdot(\frac{A}{100}) = \begin{cases}
- S\cdot(\frac{A}{100}) & \text{if +} \\
-S\cdot(\frac{A}{100}) & \text{if -}
-\end{cases}$$
+$$h^{+Y}_{A}(S) + g_{A^c}(S\cdot(\frac{A}{100})) = S\cdot(\frac{A}{100}) = \begin{cases} S\cdot(\frac{A}{100}) & \text{if +} \\ S\cdot(\frac{A}{100}) & \text{if -} \end{cases}$$
 
 at a cost of 
 
@@ -225,17 +196,11 @@ Typically an insured bet is given some maximum amount of the bet which will be i
 
 Since I am not looking to risk my money, I will value an insured bet purely in its ability to be hedged and provide risk free profit. Notice that an insured bet then has a payout function with odds +Y for event A with S dollars wagered as 
 
-$$h^{+Y}_{A}(S) = \begin{cases}
-S\cdot(1 + \frac{Y}{100})  & \text{if }A \\
-0.6 \cdot S & \text{if }A^c
-\end{cases}$$
+$$h^{+Y}_{A}(S) = \begin{cases} S\cdot(1 + \frac{Y}{100})  & \text{if }A \\ 0.6 \cdot S & \text{if }A^c \end{cases}$$
 
 The insurance supports our position by only requiring us to hedge in a prediction market $S\cdot(0.4 + \frac{Y}{100})$ contracts against our insured bet so that we get an outcome neutral position with payout
 
-$$h^{+Y}_{A}(S) + g_{A^c}(S\cdot(0.4 + \frac{Y}{100})) = \begin{cases}
-S\cdot(1 + \frac{Y}{100}) + 0 & \text{if }A \\
-0.6 \cdot S + S\cdot(0.4 + \frac{Y}{100}) & \text{if }A^c
-\end{cases} = S\cdot(1 + \frac{Y}{100})$$
+$$h^{+Y}_{A}(S) + g_{A^c}(S\cdot(0.4 + \frac{Y}{100})) = \begin{cases} S\cdot(1 + \frac{Y}{100}) + 0 & \text{if }A \\ 0.6 \cdot S + S\cdot(0.4 + \frac{Y}{100}) & \text{if }A^c \end{cases} = S\cdot(1 + \frac{Y}{100})$$
 
 to guarantee a payout of $S\cdot(1 + \frac{Y}{100})$ for a cost of 
 
@@ -243,11 +208,7 @@ $$S + p_{A^c}\cdot S\cdot(0.4 + \frac{Y}{100}) = S + \frac{Y}{Y + 100}\cdot S\cd
 
 Where we will have a profit of 
 
-$$\Pi = S\cdot(1 + \frac{Y}{100}) - S\cdot (1 + \frac{Y}{Y + 100}\cdot(0.4 + \frac{Y}{100}) ) \\ 
-= S\cdot (\frac{Y}{100} - 0.4\frac{Y}{Y + 100} - \frac{Y}{Y + 100}\frac{Y}{100}) \\ 
-= S\cdot(\frac{100}{Y+100}\frac{Y}{100} - 0.4\frac{Y}{Y+100}) \\ 
-= S\cdot (\frac{Y}{Y+100} - 0.4\frac{Y}{Y+100}) \\ 
-= 0.6\cdot S\cdot\frac{Y}{Y+100}$$
+$$\Pi = S\cdot(1 + \frac{Y}{100}) - S\cdot (1 + \frac{Y}{Y + 100}\cdot(0.4 + \frac{Y}{100}) ) \\ = S\cdot (\frac{Y}{100} - 0.4\frac{Y}{Y + 100} - \frac{Y}{Y + 100}\frac{Y}{100}) \\ = S\cdot(\frac{100}{Y+100}\frac{Y}{100} - 0.4\frac{Y}{Y+100}) \\ = S\cdot (\frac{Y}{Y+100} - 0.4\frac{Y}{Y+100}) \\ = 0.6\cdot S\cdot\frac{Y}{Y+100}$$
 
  This equation also gives us the value that in a perfectly frictionless market then a dollar of a hedged insured bet is valued as 0.6 of a bonus bet. This intuitively makes sense because we can imagine the insurance as giving a free bonus bet for the 60% of the bet that is actually insured by the value of the returned bonus bets and net 0 for the other 0.4 percent. This is optimistic assuming that uninsured bets factor to have a net 0 value instead of the actual negative EV that we have, but it allows us to build this workable model. 
 
@@ -265,10 +226,7 @@ which is much less than what you would expect upon first glance and from what th
 
  Suppose there is a boost of k% with a maximum bet size of $S_{\text{max}}$. We will describe the original bet as having +Y odds and the profit boost gives us boosted odds of $+Y(1+\frac{k}{100})$ odds. So our boosted bet has a cost of $S_{max}$, a win condition of A, and a payout of 
 
-$$h^{+Y(1+\frac{k}{100})}_{A}(S_{max}) = \begin{cases}
-S_{max}\cdot(1 + \frac{Y}{100}(1+\frac{k}{100}))  & \text{if }A \\
-0 & \text{if }A^c
-\end{cases}$$
+$$h^{+Y(1+\frac{k}{100})}_{A}(S_{max}) = \begin{cases} S_{max}\cdot(1 + \frac{Y}{100}(1+\frac{k}{100}))  & \text{if }A \\ 0 & \text{if }A^c \end{cases}$$
 
 which we can hedge with a number of contracts that we would win if the bet pays out. 
 
@@ -280,14 +238,7 @@ $$S_{max} + p_{A^c}\cdot S_{max}\cdot(1 + \frac{Y}{100}(1+\frac{k}{100}))$$
 
 giving a profit of 
 
-$$S_{max}\cdot(1 + \frac{Y}{100}(1+\frac{k}{100})) - (S_{max} + p_{A^c}\cdot S_{max}\cdot(1 + \frac{Y}{100}(1+\frac{k}{100}))) \\ 
-= S_{max}\cdot(1 + \frac{Y}{100}(1+\frac{k}{100})) - (S_{max} + (1 - p_A)\cdot S_{max}\cdot(1 + \frac{Y}{100}(1+\frac{k}{100}))) \\ 
-= S_{max}\cdot(1 + \frac{Y}{100}(1+\frac{k}{100})) - S_{max}\cdot(1 + (1 + \frac{Y}{100}(1+\frac{k}{100}))) + p_A\cdot S_{max}\cdot(1 + \frac{Y}{100}(1+\frac{k}{100})) \\ 
-=p_A\cdot S_{max}\cdot(1 + \frac{Y}{100}(1+\frac{k}{100})) - S_{max} \\ 
- = S_{max} ( p_A \cdot(\frac{Y}{100}(1+\frac{k}{100})) - (p_{A^c})) \\ 
- = S_{max} ( \frac{100}{Y+100} \cdot(\frac{Y}{100}(1+\frac{k}{100})) - (\frac{Y}{Y+100})) \\ 
-= S_{max}\cdot \frac{Y}{100+Y}\frac{k}{100} \\ 
-= S_{max}\cdot p_{A^c}\cdot\frac{k}{100}$$
+$$S_{max}\cdot(1 + \frac{Y}{100}(1+\frac{k}{100})) - (S_{max} + p_{A^c}\cdot S_{max}\cdot(1 + \frac{Y}{100}(1+\frac{k}{100}))) \\ = S_{max}\cdot(1 + \frac{Y}{100}(1+\frac{k}{100})) - (S_{max} + (1 - p_A)\cdot S_{max}\cdot(1 + \frac{Y}{100}(1+\frac{k}{100}))) \\ = S_{max}\cdot(1 + \frac{Y}{100}(1+\frac{k}{100})) - S_{max}\cdot(1 + (1 + \frac{Y}{100}(1+\frac{k}{100}))) + p_A\cdot S_{max}\cdot(1 + \frac{Y}{100}(1+\frac{k}{100})) \\ =p_A\cdot S_{max}\cdot(1 + \frac{Y}{100}(1+\frac{k}{100})) - S_{max} \\ = S_{max} ( p_A \cdot(\frac{Y}{100}(1+\frac{k}{100})) - (p_{A^c})) \\ = S_{max} ( \frac{100}{Y+100} \cdot(\frac{Y}{100}(1+\frac{k}{100})) - (\frac{Y}{Y+100})) \\ = S_{max}\cdot \frac{Y}{100+Y}\frac{k}{100} \\ = S_{max}\cdot p_{A^c}\cdot\frac{k}{100}$$
 
 Again this implies that we should take the longest odds possible when given some promo in the sports books and this reasonably gives us an upper bound of a profit boost of k% with a max bet size of $S_{max}$ as $\frac{k}{100}S_{max}$. This hedging computation assums a perfectly efficient market which is does not take place. Another way to think about the profit boost is that it grants a bonus bet of size $\frac{k}{100}S_{max}$ when a normal bet of size $S_{max}$ is made. Since we value a normal bet as loosing 10% of the wagered value, we can value a profit boost's profit as
 
