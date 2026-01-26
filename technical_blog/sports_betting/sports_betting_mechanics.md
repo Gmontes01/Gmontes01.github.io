@@ -1,6 +1,6 @@
  # The Mechanics of Gambling
 
- *draft
+ *draft last edit 1/26/2026
 
  Sports books offer many events that can be bet on. Really anything in sports that can be quantified like an individual's scores, yards gained by an individual or team, position in an overall ranking, and of course the binary 'will this team/person win?' is something that sports books want to have people gambling on. 
 
@@ -329,10 +329,10 @@ $$
 $$.
  This equation also gives us the value that in a perfectly frictionless market then a dollar of a hedged insured bet is valued as 0.6 of a bonus bet. This intuitively makes sense because we can imagine the insurance as giving a free bonus bet for the 60% of the bet that is actually insured by the value of the returned bonus bets and net 0 for the other 0.4 percent. This is optimistic assuming that uninsured bets factor to have a net 0 value instead of the actual negative EV that we have, but it allows us to build this workable model. 
 
-From this interpretation we can model an insured bet of size S as being worth $0.6\cdot S$ bonus bets minus the cost of making and hedging 0.4 normal bets. We model a bonus bet as worth 0.6 dollars to bonus bet dollars and on average a hedged normal bet costs 0.05 percent of the wager. So from this model we have the rough approximation that an insured bet is worth about 
+From this interpretation we can model an insured bet of size S as being worth $0.6\cdot S$ bonus bets minus the cost of making and hedging 0.4 normal bets. We model a bonus bet as worth 0.6 dollars to bonus bet dollars and on average a hedged normal bet has an expected pnl of -10% of the wager. So from this model we have the rough approximation that an insured bet is worth about 
 
 $$
-0.6\cdot(0.6\cdot S) - 0.05 \cdot 0.4 \cdot S = (0.36 - 0.02) \cdot S = 0.33\cdot S 
+\Pi \approx0.6\cdot(0.6\cdot S) - 0.1 \cdot 0.4 \cdot S = (0.36 - 0.04) \cdot S = 0.32\cdot S 
 $$
 
 which is much less than what you would expect upon first glance and from what the promotios would want you to think. This is still useful in gauging the utility of say $100 in bonus bets against $150 in bet insurance where you can expect the bonus bets to be worth about $60 and the $150 bet insurance to end up being worth about $50 making the bonus bets a better deal.
@@ -356,5 +356,53 @@ $$
 which we can hedge with a number of contracts that we would win if the bet pays out. 
 
 $$
+h^{+Y(1+\frac{k}{100})}_{A}(S_{max}) + g_{A^c}(S_{max}\cdot(1 + \frac{Y}{100}(1+\frac{k}{100}))) = S_{max}\cdot(1 + \frac{Y}{100}(1+\frac{k}{100}))
+$$
+
+at a cost of 
+$$
+S_{max} + p_{A^c}\cdot S_{max}\cdot(1 + \frac{Y}{100}(1+\frac{k}{100}))
+$$
+
+giving a profit of 
 
 $$
+S_{max}\cdot(1 + \frac{Y}{100}(1+\frac{k}{100})) - (S_{max} + p_{A^c}\cdot S_{max}\cdot(1 + \frac{Y}{100}(1+\frac{k}{100})))
+$$
+
+$$
+= S_{max}\cdot(1 + \frac{Y}{100}(1+\frac{k}{100})) - (S_{max} + (1 - p_A)\cdot S_{max}\cdot(1 + \frac{Y}{100}(1+\frac{k}{100})))
+$$
+
+$$
+= S_{max}\cdot(1 + \frac{Y}{100}(1+\frac{k}{100})) - S_{max}\cdot(1 + (1 + \frac{Y}{100}(1+\frac{k}{100}))) + p_A\cdot S_{max}\cdot(1 + \frac{Y}{100}(1+\frac{k}{100}))
+$$
+
+$$
+=p_A\cdot S_{max}\cdot(1 + \frac{Y}{100}(1+\frac{k}{100})) - S_{max}
+$$
+
+$$
+ = S_{max} ( p_A \cdot(\frac{Y}{100}(1+\frac{k}{100})) - (p_{A^c}))
+$$
+
+$$
+ = S_{max} ( \frac{100}{Y+100} \cdot(\frac{Y}{100}(1+\frac{k}{100})) - (\frac{Y}{Y+100}))
+$$
+
+$$
+= S_{max}\cdot \frac{Y}{100+Y}\frac{k}{100}
+$$
+
+$$
+= S_{max}\cdot p_{A^c}\cdot\frac{k}{100}
+$$
+
+Again this implies that we should take the longest odds possible when given some promo in the sports books and this reasonably gives us an upper bound of a profit boost of k% with a max bet size of $S_{max}$ as $\frac{k}{100}S_{max}$. This hedging computation assums a perfectly efficient market which is does not take place. Another way to think about the profit boost is that it grants a bonus bet of size $\frac{k}{100}S_{max}$ when a normal bet of size $S_{max}$ is made. Since we value a normal bet as loosing 10% of the wagered value, we can value a profit boost's profit as
+
+$$
+\Pi \approx -0.1\cdot S_{max} + \frac{k}{100}\cdot 0.6\cdot S_{max} = S_{max}(\frac{6k-100}{1000})
+$$
+.
+
+From this formula we can actually see that the value of some profit boosts is still not worth it for hedging purposes when $6k-100 < 0$. This tells us that it is about zero expected value to try and hedge arb out of a 20% profit boost. 
