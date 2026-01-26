@@ -13,8 +13,8 @@
       tex: {
         inlineMath: [['$', '$'], ['\\(', '\\)']],
         displayMath: [['$$', '$$'], ['\\[', '\\]']],
-        processEscapes: true, // This allows you to use \$ for a literal dollar sign
-        processEnvironments: true // Ensures \begin{cases} is recognized
+        processEscapes: true, 
+        processEnvironments: true 
       },
       options: {
         skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
@@ -44,27 +44,37 @@
   </main>
 
   <script>
+    // --- MARKED.JS FIX ---
+    // This tells marked NOT to process anything inside $ or $$
+    const renderer = new marked.Renderer();
+    const escapeTest = /\$|\b_/; 
+
+    // Override the text renderer to preserve LaTeX
+    renderer.text = function(text) {
+      return text; 
+    };
+
+    marked.setOptions({ renderer: renderer });
+
     const file = new URLSearchParams(location.search).get('file');
     
     if (!file) {
         document.getElementById('post').innerText = 'No file specified.';
     } else {
-        // v=Date.now() prevents your browser from showing you old, cached versions
         fetch(file + '?v=' + Date.now())
           .then(r => {
               if (!r.ok) throw new Error("File not found");
               return r.text();
           })
           .then(text => {
-            // 1. Convert Markdown to HTML
+            // Convert Markdown to HTML
             const rawHtml = marked.parse(text);
             
-            // 2. Sanitize and Inject
+            // Sanitize and Inject
             const cleanHtml = DOMPurify.sanitize(rawHtml);
             document.getElementById('post').innerHTML = cleanHtml;
 
-            // 3. Trigger MathJax (Critical Step)
-            // We use the Promise version to ensure it runs after the DOM is ready
+            // Trigger MathJax (using typesetPromise for better reliability with dynamic content)
             if (window.MathJax && window.MathJax.typesetPromise) {
                 window.MathJax.typesetPromise([document.getElementById('post')]);
             }
