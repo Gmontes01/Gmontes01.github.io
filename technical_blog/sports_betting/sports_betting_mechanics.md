@@ -150,10 +150,7 @@ Because of technically advanced market makers like SIG taking a role in these pr
 
 Because the profit incentive of sportsbook is to facilitate bets with an edge to the sportsbook, it is common for these sports books to try and entice players to begin gambling on their books using one time promotions that give up some edge in the expectation that repeated gambler will pay back the amount of edge that the sportsbook gives to entice their business. These deals are typically offered in 3 main types of promotions.
 
-* **Bonus Bets**
-* **Bet Insurance**
-* **Profit Boost**
-
+$$\text{profit boosting} \\ \text{insurance} \\ \text{free bets}$$
 
 #### Bonus Bets
 
