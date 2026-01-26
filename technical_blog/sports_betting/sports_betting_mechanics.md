@@ -18,7 +18,7 @@
   Lets break down what it means so we can appropriately analyze the payouts and costs of the wagers. Look at the betting opportunities and don't worry about the 'Spread', 'Total', and 'Money' aspects but just notice that each option in this advertised matrix gives odds looking like '-110', '-10,000', and '+2,000'.
 
 
- Given some binary event $A$ we will notate the event that $A$ happens as $A^+$ and $A$ does not happen as $A^-$. We can say $A$ represents a fighter winning a fight, a team losing a football game, a basketball player scoring more than 7.5 three pointers, or someone streaking at the Super Bowl. These events will be given odds where a plus notates how much a gambler profits from a $100 bet and negative notates how much is necessary for someone to bet to win $100 if the bet pays off. An important feature of these odds too is that they are linear, so if you have a '+200' for $150 then a win on that bet will get you $300. 
+ Given some binary event $A$ we will notate the event that $A$ happens as $A^+$ and $A$ does not happen as $A^-$. We can say $A$ represents a fighter winning a fight, a team losing a football game, a basketball player scoring more than 7.5 three pointers, or someone streaking at the Super Bowl. These events will be given odds where a plus notates how much a gambler profits from a \$100 bet and negative notates how much is necessary for someone to bet to win \$100 if the bet pays off. An important feature of these odds too is that they are linear, so if you have a '+200' for \$150 then a win on that bet will get you \$300. 
 
  Simple enough, but this back and forth inversion doesn't work smoothly in the human brain and for analyzing probabilities of events so lets convert these odds to implied probabilities. Normally odds will always show the bigger number between the + and - odds. Suppose we have a bet that is -110 odds we can solve for the equivalent positive odds by considering the linearity of our bet payout.
  $$
@@ -160,7 +160,7 @@ Given a mathematical inclination to approach these topics, it is relieving to se
 
 Of course, if the event is certain to occur or not then there is no reason to trade, but the role of prediction markets is trade on events that are uncertain to occur with some probability, like the outcome of a sports match.
 
-This functions by creating a free market, similar in structure to financial markets of assets, where people are allowed to trade contracts of events which pay out $1 if the event occurs or worthless if the event does not. Here is the payout structure for a single contract for an event A taking place.
+This functions by creating a free market, similar in structure to financial markets of assets, where people are allowed to trade contracts of events which pay out \$1 if the event occurs or worthless if the event does not. Here is the payout structure for a single contract for an event A taking place.
 
 $$
 g(contract_A) = \begin{cases}
@@ -221,12 +221,11 @@ $$
 
 #### Bonus Bets
 
-*revise event to be A and A^c. revise American odd to be +Y.
 
 
 Many sports betting sites have enticing and simple sounding advertisments that claim "do this and claim several hundered dollars in bonus bets". These bonus bets are often denoted in some play currency with the sports book that have heavy restrictions applying to them, such as you cannot simply withdraw the bonus bets and close your account to get free money; you need to actually gamble with the bonus bets. We need to think a little harder to get the actual value out of the bonus bets.
 
-Another significant restriction that applies when valuing bonus bets, is that wagers made using bonus bets do not pay back the value of the initial wager like what is normally assumed. So making a wager of $S bonus bucks with odds +Y for event A we model the wager as having no cost so it is model like so.
+Another significant restriction that applies when valuing bonus bets, is that wagers made using bonus bets do not pay back the value of the initial wager like what is normally assumed. So making a wager of \$S bonus bucks with odds +Y for event A we model the wager as having no cost so it is model like so.
 
 $$
 h^{+Y}_{A}(S) = \begin{cases}
@@ -235,7 +234,7 @@ h^{+Y}_{A}(S) = \begin{cases}
 \end{cases}
 $$
 
-We can compute the expected value of this $B sized wager by computing the expectation of its profit as
+We can compute the expected value of this \$B sized wager by computing the expectation of its profit as
 
 $$
 \mathbb{E}[\Pi^{+}_{bonus}(S)] = p_+\cdot S\cdot(\frac{A}{100}) \\ = \frac{100}{A+100}\cdot S\cdot(\frac{A}{100}) = \frac{A}{100 + A}\cdot S
@@ -335,7 +334,7 @@ $$
 \Pi \approx0.6\cdot(0.6\cdot S) - 0.1 \cdot 0.4 \cdot S = (0.36 - 0.04) \cdot S = 0.32\cdot S 
 $$
 
-which is much less than what you would expect upon first glance and from what the promotios would want you to think. This is still useful in gauging the utility of say $100 in bonus bets against $150 in bet insurance where you can expect the bonus bets to be worth about $60 and the $150 bet insurance to end up being worth about $50 making the bonus bets a better deal.
+which is much less than what you would expect upon first glance and from what the promotios would want you to think. This is still useful in gauging the utility of say \$100 in bonus bets against \$150 in bet insurance where you can expect the bonus bets to be worth about \$60 and the \$150 bet insurance to end up being worth about \$50 making the bonus bets a better deal.
 
  #### Profit boost
 

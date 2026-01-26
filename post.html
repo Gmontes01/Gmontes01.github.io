@@ -13,14 +13,11 @@
       tex: {
         inlineMath: [['$', '$'], ['\\(', '\\)']],
         displayMath: [['$$', '$$'], ['\\[', '\\]']],
-        processEscapes: true
+        processEscapes: true, // This allows you to use \$ for a literal dollar sign
+        processEnvironments: true // Ensures \begin{cases} is recognized
       },
       options: {
-        // This ensures MathJax looks inside the dynamic 'post' div
         skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-      },
-      startup: {
-        typeset: false // Don't run on page load; we'll trigger it manually
       }
     };
   </script>
