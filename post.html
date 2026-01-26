@@ -42,7 +42,7 @@
         <article id="markdown-content">Loading content...</article>
     </main>
 
-    <script>
+<script>
         const urlParams = new URLSearchParams(window.location.search);
         const fileName = urlParams.get('file');
 
@@ -57,32 +57,33 @@
                 .then(text => {
                     const mathBlocks = [];
                     
-                    // 1. Protection: Find all math and replace with placeholders
-                    // This prevents marked.js from seeing the LaTeX backslashes/underscores
+                    // 1. Protection: Use a unique prefix to avoid collision
                     const protectedText = text.replace(/(\$\$[\s\S]+?\$\$|\$[\s\S]+?\$)/g, (match) => {
-                        const placeholder = `__MATH_BLOCK_${mathBlocks.length}__`;
+                        const placeholder = `__GABRIEL_MATH_${mathBlocks.length}__`;
                         mathBlocks.push(match);
                         return placeholder;
                     });
 
-                    // 2. Render Markdown on the shielded text
+                    // 2. Render Markdown
                     let html = marked.parse(protectedText);
 
-                    // 3. Restoration: Put the math back in
+                    // 3. Restoration: Global replacement to put math back
                     mathBlocks.forEach((math, index) => {
-                        html = html.replace(`__MATH_BLOCK_${index}__`, math);
+                        const placeholder = `__GABRIEL_MATH_${index}__`;
+                        // We use split/join for a "replace all" effect that is safer than regex
+                        html = html.split(placeholder).join(math);
                     });
 
                     // 4. Inject into DOM
                     document.getElementById('markdown-content').innerHTML = html;
 
-                    // 5. Trigger MathJax to typeset the newly added content
+                    // 5. Trigger MathJax
                     if (window.MathJax && window.MathJax.typesetPromise) {
                         window.MathJax.typesetPromise();
                     }
                 })
                 .catch(err => {
-                    document.getElementById('markdown-content').innerHTML = `<p>Error loading post: ${err.message}</p>`;
+                    document.getElementById('markdown-content').innerHTML = `<p>Error: ${err.message}</p>`;
                 });
         }
     </script>
