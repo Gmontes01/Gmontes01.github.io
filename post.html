@@ -1,8 +1,8 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Gabriel Montes | Technical Post</title>
+  <title>Gabriel Montes | Post</title>
   <link rel="stylesheet" href="style.css">
   
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -16,7 +16,11 @@
         processEscapes: true
       },
       options: {
+        // This ensures MathJax looks inside the dynamic 'post' div
         skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      },
+      startup: {
+        typeset: false // Don't run on page load; we'll trigger it manually
       }
     };
   </script>
@@ -31,7 +35,7 @@
           </a>
           <ul>
               <li><a href="index.html">About</a></li> 
-              <li><a href="experience.html">Resum&eacute;</a></li>
+              <li><a href="experience.html">R&eacute;sum&eacute;</a></li>
               <li><a href="technical_blog.html">Technical Blog</a></li>
               <li><a href="personal_blog.html">Personal Blog</a></li>
           </ul>
@@ -48,26 +52,28 @@
     if (!file) {
         document.getElementById('post').innerText = 'No file specified.';
     } else {
+        // v=Date.now() prevents your browser from showing you old, cached versions
         fetch(file + '?v=' + Date.now())
           .then(r => {
               if (!r.ok) throw new Error("File not found");
               return r.text();
           })
           .then(text => {
-            // 4. Convert Markdown to HTML
+            // 1. Convert Markdown to HTML
             const rawHtml = marked.parse(text);
-            // 5. Sanitize HTML for security
-            const cleanHtml = DOMPurify.sanitize(rawHtml);
             
+            // 2. Sanitize and Inject
+            const cleanHtml = DOMPurify.sanitize(rawHtml);
             document.getElementById('post').innerHTML = cleanHtml;
 
-            // 6. Tell MathJax to scan the newly added content for LaTeX
-            if (window.MathJax && window.MathJax.typeset) {
-                window.MathJax.typeset();
+            // 3. Trigger MathJax (Critical Step)
+            // We use the Promise version to ensure it runs after the DOM is ready
+            if (window.MathJax && window.MathJax.typesetPromise) {
+                window.MathJax.typesetPromise([document.getElementById('post')]);
             }
           })
           .catch(e => {
-            document.getElementById('post').innerText = 'Failed to load post. Check file path: ' + file;
+            document.getElementById('post').innerText = 'Failed to load post. Error: ' + e.message;
           });
     }
   </script>
