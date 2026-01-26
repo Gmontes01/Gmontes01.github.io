@@ -53,21 +53,32 @@
         fetch(file + '?v=' + Date.now())
           .then(r => r.ok ? r.text() : Promise.reject("File not found"))
           .then(text => {
-            // THE FIX: Use marked.parse directly and handle the output correctly
-            const htmlOutput = marked.parse(text);
+            // STEP 1: Protection Loop
+            // We tell marked to treat $...$ and $$...$$ as plain text blocks
+            // so it doesn't parse underscores or backslashes inside them.
+            marked.use({
+              extensions: [{
+                name: 'math',
+                level: 'inline',
+                start: (src) => src.indexOf('$'),
+                tokenizer(src) {
+                  const match = /^\$\$[\s\S]+?\$\$|^\$[\s\S]+?\$|^\$[^$\n]+?\$/.exec(src);
+                  if (match) {
+                    return { type: 'math', raw: match[0], text: match[0] };
+                  }
+                },
+                renderer(token) { return token.text; }
+              }]
+            });
 
-            // If it returns a Promise (some versions do), we handle it. 
-            // If it returns a string, we use it.
-            return (htmlOutput instanceof Promise) ? htmlOutput : Promise.resolve(htmlOutput);
-          })
-          .then(rawHtml => {
-            // Ensure we are dealing with a string
-            const finalHtml = (typeof rawHtml === 'string') ? rawHtml : JSON.stringify(rawHtml);
+            // STEP 2: Render Markdown
+            const rawHtml = marked.parse(text);
             
-            // Sanitize and Inject
-            document.getElementById('post').innerHTML = DOMPurify.sanitize(finalHtml);
+            // STEP 3: Sanitize and Inject
+            // We allow MathJax tags to persist through sanitization
+            document.getElementById('post').innerHTML = DOMPurify.sanitize(rawHtml);
 
-            // Trigger MathJax
+            // STEP 4: Trigger MathJax
             if (window.MathJax && window.MathJax.typesetPromise) {
                 window.MathJax.typesetPromise([document.getElementById('post')]);
             }
