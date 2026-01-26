@@ -39,33 +39,33 @@ I learned there is a pretty nice gym that is walking distance from me so I'll li
 
 Most people that I know are taking a break from skiing to watch football today since they ski most of the season anyways. This works for me since I recently have gained a good bit of confidence skiing and I started snowboarding more intensely. Because of this, my muscles and joints are feeling more sore so a day off will do me some good. 
 
-I also noticed a good bit of large promotions in sports betting ads that I would see in the football my friends were watching. Exploiting these promotions to give myself arb or a positive EV to finance my future travels seems like a valuable excercise dealing with variance and market mechanics leading into my trading job. 
+I also noticed a good bit of large promotions in sports betting ads that I would see in the football my friends were watching. Exploiting these promotions to give myself arb or a positive EV to finance my future travels seems like a valuable exercise dealing with variance and market mechanics leading into my trading job. 
 
-I am fully aware that these promotions are designed to get people hooked on gambling and I am confident that I can analyze and intellectualize these bets to the point were it will feel like homework thus taking the addictive thrill out of gambling. Also since I intend to view this as an academic excercise I will likely be gambling on events that are more obscure which I do NOT plan to watch, unless I can find a compelling reason to bet on popular events(i.e tighter spreads). This will likely also cut down on the addictivness of the gambling and even if these bets are being placed on popular events like the super bowl I plan to arb out any risk so that I am hedged given the outcome and I only collect the edge that is guaranteed from my strategy. This strategy will only work while I am in Colorado since gambling on these sites are only legal in certain states, so after a month, when I leave Colorado, I must cash out and stop sports bettin. This will likely give me enough time to exploit the new "customer" offers and not give enough time for the gambling sites to catch on to my activities and thus ban me. I will publish my strategy and thoughts in a technical blog post, so look there if you would like to see more about my approach to this. 
+I am fully aware that these promotions are designed to get people hooked on gambling and I am confident that I can analyze and intellectualize these bets to the point where it will feel like homework thus taking the addictive thrill out of gambling. Also since I intend to view this as an academic exercise I will likely be gambling on events that are more obscure which I do NOT plan to watch, unless I can find a compelling reason to bet on popular events(i.e tighter spreads). This will likely also cut down on the addictivness of the gambling and even if these bets are being placed on popular events like the super bowl I plan to arb out any risk so that I am hedged given the outcome and I only collect the edge that is guaranteed from my strategy. This strategy will only work while I am in Colorado since gambling on these sites are only legal in certain states, so after a month, when I leave Colorado, I must cash out and stop sports bettin. This will likely give me enough time to exploit the new "customer" offers and not give enough time for the gambling sites to catch on to my activities and thus ban me. I will publish my strategy and thoughts in a technical blog post, so look there if you would like to see more about my approach to this. 
 
 ### January 5 2026 - Monday
 
-Decent out on the mountain. I was able to hitch a ride to and from the mountain around the beginning and end of the day so I spent the whole day snowboarding and listening to 'flash boys' on audio book. It's just nerdy enough to stop me from giving off any cool ski bum vibes. My friends and I went to a local steakhouse, Quicy's, and had an incredible meal for like 30$ with watermelon margaritas that were unnecessarily good. The restuarant had one thing on the menu: Steak. The menu did give us the option of 4 sizes, how well done we want it, and that was it. The cut of steak is determined by the weekday and that is my favorite type of restuarant.  
+Decent out on the mountain. I was able to hitch a ride to and from the mountain around the beginning and end of the day so I spent the whole day snowboarding and listening to 'flash boys' on audio book. It's just nerdy enough to stop me from giving off any cool ski bum vibes. My friends and I went to a local steakhouse, Quincy's, and had an incredible meal for like 30$ with watermelon margaritas that were unnecessarily good. The restaurant had one thing on the menu: Steak. The menu did give us the option of 4 sizes, how well done we want it, and that was it. The cut of steak is determined by the weekday and that is my favorite type of restaurant.  
 
 ### January 6 2026 - Tuesday
 
-It was still my friend's weekend and it snowed the night before so everyone was excited to go to the mountain and enjoy the 'pow day'. I enjoyed the powder and got worked super hard going over moguls. I then let myself get talked into going to another local restuarant, The Famous. This is one of my favorite Italian restuarants(including the one's I visited in Italy). It was a good meal even though I was sore I got to come home and fall off rainbow road while playing Mario Kart with the roommates of where I was staying.
+It was still my friend's weekend and it snowed the night before so everyone was excited to go to the mountain and enjoy the 'pow day'. I enjoyed the powder and got worked super hard going over moguls. I then let myself get talked into going to another local restaurant, The Famous. This is one of my favorite Italian restaurant(including the one's I visited in Italy). It was a good meal even though I was sore I got to come home and fall off rainbow road while playing Mario Kart with the roommates of where I was staying.
 
 ### January 7 2026 - Wednesday
 
 I was sore and had plenty of skiing so I skipped going to Copper Mountain. I decided to actual implement the sports betting arbitraging strategy to exploit new player promotions. It was pretty scary moving around the amount of money that I was moving, but I ended up making a tidy profit on a few promos.
 
- I also got more comfortable making smaller plays for little bits of arbitrage across sites which is good because I am going to need to make much bigger plays with some of the larger promos before these sites figure out what I am doing and ban me. My goals are to analyze data to find a way to smartly gamble short parlay's which these sites like to advertise a lot because parlays make a lot of money for these sites(and lose a lot for their customers). I also want to find a scheme for trading live. Live trading seems more risky as the numbers are moving constantly and execution speed is both crutial and limited, but it would be a good excercise. I will not trade anything besides arbitrage on promos until I thoroughly understand these other bet types and make a technical post about it.
+ I also got more comfortable making smaller plays for little bits of arbitrage across sites which is good because I am going to need to make much bigger plays with some of the larger promos before these sites figure out what I am doing and ban me. My goals are to analyze data to find a way to smartly gamble short parlay's which these sites like to advertise a lot because parlays make a lot of money for these sites(and lose a lot for their customers). I also want to find a scheme for trading live. Live trading seems more risky as the numbers are moving constantly and execution speed is both crucial and limited, making it a good exercise. I will not trade anything besides arbitrage on promos until I thoroughly understand these other bet types and make a technical post about it.
 
 ### January 8 2026 - Thursday
 
-The plan was, I wake up, go to a coffee shop, snowboard a little, hitch a ride back to Leadville, do some coding or math. I went to City on a Hill, snowboarded for about 2 or 3 hours. I went off my first park jump with the technique of a 5 year old. Then I did some normal snowboarding and had a pretty bad fall. I was going around 20-25mph by my guess and I must have caught my front edge trying a little ollie and suddenly I was sliding face down on some packed snow with my limbs making a huge X with my body. The fall shook me a bit and was unpleasant, but after the 5 seconds of gliding on the snow I checked my body and had no sharpe pains and was a little worried about hitting my head on the snow. Every check I did on myself told me I didn't have a concussion so I was fine and I had a little bit of pain on my left wrist, but nothing bad.
+The plan was, I wake up, go to a coffee shop, snowboard a little, hitch a ride back to Leadville, do some coding or math. I went to City on a Hill, snowboarded for about 2 or 3 hours. I went off my first park jump with the technique of a 5 year old. Then I did some normal snowboarding and had a pretty bad fall. I was going around 20-25mph, by my guess, and I must have caught my front edge trying a little ollie, and suddenly I was sliding face down on some packed snow with my limbs making a huge X with my body. The fall shook me a bit and was unpleasant, but after the 5 seconds of gliding on the snow I checked my body and had no sharp pains and was a little worried about hitting my head on the snow. Every check I did on myself told me I didn't have a concussion so I was fine and I had a little bit of pain on my left wrist, but nothing bad.
 
 I then went on a ride along with my friend in a snowcat and got to see what he does for work after the mountain closed. Specialized heavy machinery is alwasy pretty cool to see, and it had bluetooth so we could listen to Japanese learning podcasts through his shift like it was a road trip. My wrist started feeling worse and worse as the shift continued to the point that I was worried it was broken by the time I went to bed.
 
 ### January 9 2026
 
-I spent the day in and did not go snowboarding to let my wrist heal. I worked on my sports betting arbitrage blog and executing my arbitrage strategy. My wrist healed surprisingly quickly making me hopefuly that the injury is just a sprain and that it will be all healed up in time for my upcoming trip to Japan. I tried going for a run, but quickly post poned those plans after feeling the 0 degree air temp.
+I spent the day in and did not go snowboarding to let my wrist heal. I worked on my sports betting arbitrage blog and executing my arbitrage strategy. My wrist healed surprisingly quickly making me hopefuly that the injury is just a sprain and that it will be all healed up in time for my upcoming trip to Japan. I tried going for a run, but quickly postponed those plans after feeling the 0 degree air temp.
 
 ### January 10 2026
 
@@ -81,11 +81,8 @@ I went snowboarding today. I was able to hitch a ride there and back. I did not 
 
 ### January 13 2026 - Tuesday 
 
-I slept bad the night before so I did not snowboard because I am especially scared about injuring myself after this scare with my wrist. All but one of the people living in the house where I am staying are gone, so I spent most of the day with them and went to trivia at a local bar. I met some locals, both of which are in a run club so I will try and join them next week. 
+I slept poorly the night before so I did not snowboard because I am especially scared about injuring myself after this scare with my wrist. All but one of the people living in the house where I am staying are gone, so I spent most of the day with them and went to trivia at a local bar. I met some locals, both of which are in a run club so I will try and join them next week. 
 
-### January 14 2026 - Wednesday 
-
-Nothing special
 
 ### January 15 2026 - Thursday 
 
@@ -93,7 +90,7 @@ Woke up, went snowboarding for a bit. Snow was hard and icy. I went over a rock 
 
 ### January 16 2026 - Friday
 
-Temperature was in the single digits to teens not accounting for windchill. There was no snow fall making this the worst year ever recorded at Copper Mountain for snowfall which is really important for skiing. It was also overcaste giving what is called 'flat light'. Flat light just means that the sunlight is not strong enough to give shadows on the snow when you are riding, making the ground look like a plain sheet of white with no detechtable features. This can be pretty dangerous to not be able to make out features in the snow when you are riding and can hit a random drop, groove, or jump. 
+Temperature was in the single digits to teens not accounting for windchill. There was no snow fall making this the worst year ever recorded at Copper Mountain for snowfall which is really important for skiing. It was also overcast giving what is called 'flat light'. Flat light just means that the sunlight is not strong enough to give shadows on the snow when you are riding, making the ground look like a plain sheet of white with no detectable features. This can be pretty dangerous to not be able to make out features in the snow when you are riding and can hit a random drop, groove, or jump. 
 
 Needless to say, I opted against riding and just stayed in and played a little chess. 
 
@@ -110,3 +107,32 @@ Went skiing with some of the roommates and a new roommates new situationship. Th
 Went Skiing with dudes that live in Leadville. Ended the night going to a local steakhouse then going to a camp fire.
 
 ### January 20 2026 - Tuesday
+
+Stayed in and just went for a run. The run was about 5k at elevation which completely destroyed me physically, but I was proud of the accomplishment. I then went to trivia and hijacked a roommates phone talking to one of their friends about anime. One of the roommates also picked up anime which I have not watched in a while, so we enjoyed watching some full metal alchemist brotherhood these past few evenings after their work.
+
+
+### January 21 2026 - Wednesday 
+
+Went skiing with one of the roommates and their new girlfriend. Looks like they tried to set me up with one of the friends who had recurring problem with a situationship. Nothing happened lol.
+
+### January 22 2026 - Thursday
+
+Stayed in again and did a 5k later in the evening. I watched a few speeches from the world economic forum this year. The rhetoric and sentiments being expressed by world leaders were really interesting me as I am getting into monitoring the political and economic state of the world. While listening I repaired an old beaten up snowboard that I bought for $20. A normal price for a snowboard is around $300.
+
+### January 23 2026 - Friday 
+
+Going riding after waking up early with a roommate. Its extra cold today so I might grab a hot coffee at the resort. My sister and mom are coming to town for the weekend, so I will meet them at their rental house this evening when they arrive. My sister and mom flew in late this night. We are staying in a nearby airbnb, so I get to sleep in a bed for the first time all month.  
+
+### January 24 2026 - Saturday
+
+I showed my favorite coffee shop to my sister and mom who loved it and the cute town of Leadville, CO. I then took my sister to Copper mtn and struck her a good deal on rentals and day passes for the two days that she would be skiing. She ended up needing to buy goggles after getting the rental supplies which really bugged me. Also during this time the central and eastern US is being hit by a big winter storm, so we just got a lot of snow and the snow is the best it's been all month with a good layer of fresh powder. The storm also dropped the temperature to the teens for the day when we were skiing, but our gear was good enough so this wasn't an issue. 
+
+ She skis and I snowboard, so there was little advice I could give her to coach her down the mountain. I had to stick with her as she was getting comfortable skiing down the green runs. I had only ever experienced this combination as the noobie trying to figure out skiing and this was the first time I got to act as the experienced coach who is kinda itching to just ride at my pace, but I couldn't because I was not willing to abandon someone who is learning to ski on the mountain. Overall, I had a good time and was able to practice a couple tricks and jumps that made sense to practice at the slow speeds I needed to keep to not get away from my sister. 
+
+ After skiing with my sister, we went to a local restuarant with my mom. My sister and I then went to see live music at a local bar and met with a bunch of our local friends and some who came up from Denver. 
+
+ ### January 25 2026 - Sunday
+
+Upon waking up, my sister and I checked the forcaste and saw that the high was -2 Fahrenheit. We bundled up, ate breakfast and went to the mountain so my sister can get her money's worth on the passes and rentals that she bought for the day. Thankfully lines were short and my sister was keeping up with me much better than the day before. I pressured her to go down a blue run which she was initially scared to attempt, but after only falling once  on the blue run she was glad that I pushed her with that run.
+
+We got lunch, moved me back into my couch and said goodbye. 

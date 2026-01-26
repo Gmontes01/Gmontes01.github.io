@@ -115,6 +115,7 @@ a:active {
     color: var(--accent);
 }
 
+nav a,
 nav a:visited {
-    color: var(--text);
+    color: var(--accent);
 }
