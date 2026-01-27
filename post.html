@@ -10,7 +10,7 @@
         window.MathJax = {
             tex: {
                 inlineMath: [['\\(', '\\)']], 
-                displayMath: [['\\[', '\\]']],
+                displayMath: [['\\[', '\\]']], // We are switching to \[ \] as requested
                 processEscapes: true
             },
             options: {
@@ -23,9 +23,8 @@
 
     <style>
         #markdown-content { max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; font-family: sans-serif; }
-        img { max-width: 100%; height: auto; display: block; margin: 20px auto; }
+        img { max-width: 100%; height: auto; }
         pre { background: #f4f4f4; padding: 15px; overflow-x: auto; }
-        blockquote { border-left: 4px solid #ccc; margin: 0; padding-left: 16px; color: #666; }
     </style>
 </head>
 <body>
@@ -51,17 +50,15 @@
                 return;
             }
 
-            // 1. DETERMINE THE BASE FOLDER
-            // If fileName is "folder/sub/post.md", basePath becomes "folder/sub/"
-            const basePath = fileName.substring(0, fileName.lastIndexOf('/') + 1);
-
-            fetch(fileName + '?v=' + Date.now())
+            fetch(fileName + '?v=' + Date.now()) // Prevent caching
                 .then(res => {
                     if (!res.ok) throw new Error(`Status ${res.status}: ${res.statusText}`);
                     return res.text();
                 })
                 .then(markdown => {
-                    // --- STEP 2: PROTECT THE MATH ---
+                    // --- STEP 1: PROTECT THE MATH ---
+                    // We replace math blocks with placeholders so Marked.js doesn't touch them.
+                    
                     const mathStorage = [];
                     
                     // Protect Display Math \[ ... \]
@@ -76,28 +73,17 @@
                         return `%%%MATH_INLINE_${mathStorage.length - 1}%%%`;
                     });
 
-                    // --- STEP 3: CONFIGURE IMAGE RENDERER ---
-                    const renderer = new marked.Renderer();
-                    renderer.image = function(href, title, text) {
-                        // If the link is NOT absolute (doesn't start with http or /)
-                        // Prepend the basePath (e.g., "technical_blog_folder/sports_betting/")
-                        if (!/^https?:\/\//.test(href) && !href.startsWith('/')) {
-                            href = basePath + href;
-                        }
-                        return `<img src="${href}" alt="${text}" title="${title || ''}">`;
-                    };
+                    // --- STEP 2: PARSE MARKDOWN ---
+                    let html = marked.parse(protectedText);
 
-                    // --- STEP 4: PARSE MARKDOWN ---
-                    let html = marked.parse(protectedText, { renderer: renderer });
-
-                    // --- STEP 5: RESTORE THE MATH ---
+                    // --- STEP 3: RESTORE THE MATH ---
                     html = html.replace(/%%%MATH_BLOCK_(\d+)%%%/g, (match, i) => mathStorage[i]);
                     html = html.replace(/%%%MATH_INLINE_(\d+)%%%/g, (match, i) => mathStorage[i]);
 
                     // Inject HTML
                     container.innerHTML = html;
 
-                    // --- STEP 6: RENDER MATH ---
+                    // --- STEP 4: RENDER MATH ---
                     if (window.MathJax) {
                         MathJax.typesetPromise([container]);
                     }
