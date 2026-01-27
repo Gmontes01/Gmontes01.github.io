@@ -56,40 +56,34 @@
                 })
                 .then(text => {
                     const mathBlocks = [];
-                    
-                    // 1. Protection: Handle display math ($$...$$) first, then inline math ($...$)
-                    // This prevents $$...$$ from being broken into two $ matches
                     let protectedText = text;
                     
-                    // Protect display math first
-                    protectedText = protectedText.replace(/\$\$([\s\S]+?)\$\$/g, (match) => {
-                        const placeholder = `__MATH_BLOCK_${mathBlocks.length}__`;
+                    // Step 1: Protect display math ($$...$$) - must come first!
+                    protectedText = protectedText.replace(/\$\$([\s\S]*?)\$\$/g, function(match, content) {
                         mathBlocks.push(match);
-                        return placeholder;
+                        return `<!--MATHBLOCK${mathBlocks.length - 1}-->`;
                     });
                     
-                    // Then protect inline math
-                    protectedText = protectedText.replace(/\$([^\n]+?)\$/g, (match) => {
-                        const placeholder = `__MATH_BLOCK_${mathBlocks.length}__`;
+                    // Step 2: Protect inline math ($...$)
+                    protectedText = protectedText.replace(/\$([^\$\n]+?)\$/g, function(match, content) {
                         mathBlocks.push(match);
-                        return placeholder;
+                        return `<!--MATHBLOCK${mathBlocks.length - 1}-->`;
                     });
 
-                    // 2. Render Markdown
+                    // Step 3: Parse markdown
                     let html = marked.parse(protectedText);
 
-                    // 3. Restoration: Replace placeholders with original math
-                    mathBlocks.forEach((math, index) => {
-                        const placeholder = `__MATH_BLOCK_${index}__`;
-                        html = html.split(placeholder).join(math);
+                    // Step 4: Restore math blocks
+                    html = html.replace(/<!--MATHBLOCK(\d+)-->/g, function(match, index) {
+                        return mathBlocks[parseInt(index)];
                     });
 
-                    // 4. Inject into DOM
+                    // Step 5: Insert into DOM
                     document.getElementById('markdown-content').innerHTML = html;
 
-                    // 5. Trigger MathJax
+                    // Step 6: Trigger MathJax rendering
                     if (window.MathJax && window.MathJax.typesetPromise) {
-                        window.MathJax.typesetPromise();
+                        window.MathJax.typesetPromise().catch(err => console.error('MathJax error:', err));
                     }
                 })
                 .catch(err => {
