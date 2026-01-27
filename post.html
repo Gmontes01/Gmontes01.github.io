@@ -3,94 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel Montes | Post Viewer</title>
+    <title>Post | Gabriel Montes</title>
     <link rel="stylesheet" href="style.css">
-    
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
     <script>
         window.MathJax = {
             tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                inlineMath: [['\\(', '\\)']], 
+                displayMath: [['\\[', '\\]']], // We are switching to \[ \] as requested
                 processEscapes: true
             },
             options: {
-                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
             }
         };
     </script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <style>
+        #markdown-content { max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; font-family: sans-serif; }
+        img { max-width: 100%; height: auto; }
+        pre { background: #f4f4f4; padding: 15px; overflow-x: auto; }
+    </style>
 </head>
 <body>
 
     <nav>
         <div class="container">
-            <a href="index.html" class="logo-link" style="text-decoration: none;">
-                <span class="logo">G.MONTES</span>
-            </a>
-            <ul>
-                <li><a href="index.html">About</a></li> 
-                <li><a href="experience.html">R&eacute;sum&eacute;</a></li>
-                <li><a href="technical_blog.html">Technical Blog</a></li>
-                <li><a href="personal_blog.html">Personal Blog</a></li>
-            </ul>
-        </div>
+            <a href="index.html" class="logo-link">G.MONTES</a>
+            </div>
     </nav>
 
     <main class="container">
         <article id="markdown-content">Loading content...</article>
     </main>
 
-<script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const fileName = urlParams.get('file');
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const fileName = urlParams.get('file');
+            const container = document.getElementById('markdown-content');
 
-        if (!fileName) {
-            document.getElementById('markdown-content').innerHTML = "<p>No file specified.</p>";
-        } else {
-            fetch(fileName + '?v=' + Date.now())
-                .then(response => {
-                    if (!response.ok) throw new Error("File not found");
-                    return response.text();
+            if (!fileName) {
+                container.innerHTML = "<h1>Error</h1><p>No file specified in URL.</p>";
+                return;
+            }
+
+            fetch(fileName + '?v=' + Date.now()) // Prevent caching
+                .then(res => {
+                    if (!res.ok) throw new Error(`Status ${res.status}: ${res.statusText}`);
+                    return res.text();
                 })
-                .then(text => {
-                    const mathBlocks = [];
-                    let protectedText = text;
+                .then(markdown => {
+                    // --- STEP 1: PROTECT THE MATH ---
+                    // We replace math blocks with placeholders so Marked.js doesn't touch them.
                     
-                    // Step 1: Protect display math ($$...$$) - must come first!
-                    protectedText = protectedText.replace(/\$\$([\s\S]*?)\$\$/g, function(match, content) {
-                        mathBlocks.push(match);
-                        return `<!--MATHBLOCK${mathBlocks.length - 1}-->`;
-                    });
+                    const mathStorage = [];
                     
-                    // Step 2: Protect inline math ($...$)
-                    protectedText = protectedText.replace(/\$([^\$\n]+?)\$/g, function(match, content) {
-                        mathBlocks.push(match);
-                        return `<!--MATHBLOCK${mathBlocks.length - 1}-->`;
+                    // Protect Display Math \[ ... \]
+                    let protectedText = markdown.replace(/\\\[([\s\S]*?)\\\]/g, (match) => {
+                        mathStorage.push(match);
+                        return `%%%MATH_BLOCK_${mathStorage.length - 1}%%%`;
                     });
 
-                    // Step 3: Parse markdown
+                    // Protect Inline Math \( ... \)
+                    protectedText = protectedText.replace(/\\\(([\s\S]*?)\\\)/g, (match) => {
+                        mathStorage.push(match);
+                        return `%%%MATH_INLINE_${mathStorage.length - 1}%%%`;
+                    });
+
+                    // --- STEP 2: PARSE MARKDOWN ---
                     let html = marked.parse(protectedText);
 
-                    // Step 4: Restore math blocks
-                    html = html.replace(/<!--MATHBLOCK(\d+)-->/g, function(match, index) {
-                        return mathBlocks[parseInt(index)];
-                    });
+                    // --- STEP 3: RESTORE THE MATH ---
+                    html = html.replace(/%%%MATH_BLOCK_(\d+)%%%/g, (match, i) => mathStorage[i]);
+                    html = html.replace(/%%%MATH_INLINE_(\d+)%%%/g, (match, i) => mathStorage[i]);
 
-                    // Step 5: Insert into DOM
-                    document.getElementById('markdown-content').innerHTML = html;
+                    // Inject HTML
+                    container.innerHTML = html;
 
-                    // Step 6: Trigger MathJax rendering
-                    if (window.MathJax && window.MathJax.typesetPromise) {
-                        window.MathJax.typesetPromise().catch(err => console.error('MathJax error:', err));
+                    // --- STEP 4: RENDER MATH ---
+                    if (window.MathJax) {
+                        MathJax.typesetPromise([container]);
                     }
                 })
                 .catch(err => {
-                    document.getElementById('markdown-content').innerHTML = `<p>Error: ${err.message}</p>`;
+                    container.innerHTML = `
+                        <div style="color: red; border: 1px solid red; padding: 20px;">
+                            <h3>Error Loading Post</h3>
+                            <p>${err.message}</p>
+                            <p>Attempted to load: <code>${fileName}</code></p>
+                        </div>`;
                 });
-        }
+        });
     </script>
-
 </body>
 </html>
