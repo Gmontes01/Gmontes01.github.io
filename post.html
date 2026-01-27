@@ -24,12 +24,9 @@
     <script src="https://cdn.jsdelivr.net/npm/marked@9.1.2/marked.min.js"></script>
 
     <style>
-        /* FORCE LIGHT THEME to prevent "everything dark" issues */
-        body {
-            background-color: #ffffff !important; /* White background */
-            color: #333333 !important; /* Dark text */
-        }
-
+        /* Force readable colors regardless of system theme */
+        body { background-color: #ffffff; color: #333333; }
+        
         #markdown-content { 
             max-width: 800px; 
             margin: 0 auto; 
@@ -38,31 +35,18 @@
             font-family: 'Inter', sans-serif; 
         }
 
-        /* Make images centered and ensure they fit */
+        /* Image styling */
         img { 
             max-width: 100%; 
             height: auto; 
             display: block; 
             margin: 20px auto; 
-            border-radius: 4px; 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        /* Clean code blocks */
-        pre { 
-            background: #f4f4f4 !important; /* Light gray background */
-            padding: 15px; 
-            overflow-x: auto; 
-            border-radius: 5px; 
             border: 1px solid #ddd;
+            border-radius: 4px; 
         }
 
-        blockquote { 
-            border-left: 4px solid #ccc; 
-            margin: 0; 
-            padding-left: 16px; 
-            color: #666; 
-        }
+        /* Code block styling */
+        pre { background: #f4f4f4; padding: 15px; overflow-x: auto; border-radius: 5px; }
     </style>
 </head>
 <body>
@@ -81,81 +65,71 @@
         document.addEventListener('DOMContentLoaded', () => {
             const container = document.getElementById('markdown-content');
             
-            try {
-                const urlParams = new URLSearchParams(window.location.search);
-                const fileName = urlParams.get('file');
+            const urlParams = new URLSearchParams(window.location.search);
+            const fileName = urlParams.get('file');
 
-                if (!fileName) {
-                    container.innerHTML = "<h1>Error</h1><p>No file specified in URL.</p>";
-                    return;
-                }
+            if (!fileName) {
+                container.innerHTML = "<h1>Error</h1><p>No file specified in URL.</p>";
+                return;
+            }
 
-                // 1. DETERMINE BASE PATH
-                // This converts "folder/sub/file.md" -> "folder/sub/"
-                const basePath = fileName.substring(0, fileName.lastIndexOf('/') + 1);
+            // 1. Calculate the folder where the markdown file lives
+            // e.g. "technical_blog_folder/sports_betting/"
+            const basePath = fileName.substring(0, fileName.lastIndexOf('/') + 1);
 
-                // 2. CONFIGURE MARKED
-                // This tells the parser: "When you see an image, put the folder path in front of it"
-                const renderer = new marked.Renderer();
-                renderer.image = function(href, title, text) {
-                    // If link is relative (doesn't start with http or /), prepend base folder
-                    if (!/^https?:\/\//.test(href) && !href.startsWith('/')) {
-                        href = basePath + href;
-                    }
-                    return `<img src="${href}" alt="${text}" title="${title || ''}">`;
-                };
-                marked.use({ renderer: renderer });
-
-                // 3. FETCH AND RENDER
-                fetch(fileName + '?v=' + Date.now())
-                    .then(res => {
-                        if (!res.ok) throw new Error(`Status ${res.status}: ${res.statusText}`);
-                        return res.text();
-                    })
-                    .then(markdown => {
-                        // A. Protect Math from Markdown parser
-                        const mathStorage = [];
-                        
-                        // Protect \[ ... \]
-                        let protectedText = markdown.replace(/\\\[([\s\S]*?)\\\]/g, (match) => {
-                            mathStorage.push(match);
-                            return `%%%MATH_BLOCK_${mathStorage.length - 1}%%%`;
-                        });
-
-                        // Protect \( ... \)
-                        protectedText = protectedText.replace(/\\\(([\s\S]*?)\\\)/g, (match) => {
-                            mathStorage.push(match);
-                            return `%%%MATH_INLINE_${mathStorage.length - 1}%%%`;
-                        });
-
-                        // B. Convert Markdown to HTML
-                        let html = marked.parse(protectedText);
-
-                        // C. Restore Math
-                        html = html.replace(/%%%MATH_BLOCK_(\d+)%%%/g, (match, i) => mathStorage[i]);
-                        html = html.replace(/%%%MATH_INLINE_(\d+)%%%/g, (match, i) => mathStorage[i]);
-
-                        // D. Inject to Page
-                        container.innerHTML = html;
-
-                        // E. Render MathJax
-                        if (window.MathJax) {
-                            MathJax.typesetPromise([container]);
-                        }
-                    })
-                    .catch(err => {
-                        console.error(err);
-                        container.innerHTML = `<div style="color:red; border:1px solid red; padding:20px; background: #fff;">
-                            <h3>Error Loading Post</h3>
-                            <p>${err.message}</p>
-                            <p>Attempted: ${fileName}</p>
-                        </div>`;
+            fetch(fileName + '?v=' + Date.now())
+                .then(res => {
+                    if (!res.ok) throw new Error(`Status ${res.status}: ${res.statusText}`);
+                    return res.text();
+                })
+                .then(markdown => {
+                    // --- STEP 1: PROTECT MATH ---
+                    const mathStorage = [];
+                    // Protect \[ ... \]
+                    let protectedText = markdown.replace(/\\\[([\s\S]*?)\\\]/g, (match) => {
+                        mathStorage.push(match);
+                        return `%%%MATH_BLOCK_${mathStorage.length - 1}%%%`;
+                    });
+                    // Protect \( ... \)
+                    protectedText = protectedText.replace(/\\\(([\s\S]*?)\\\)/g, (match) => {
+                        mathStorage.push(match);
+                        return `%%%MATH_INLINE_${mathStorage.length - 1}%%%`;
                     });
 
-            } catch (e) {
-                console.error("Script Error:", e);
-                container.innerHTML = "<p>Critical Script Error. Check console.</p>";
-            }
+                    // --- STEP 2: PARSE MARKDOWN TO HTML ---
+                    let html = marked.parse(protectedText);
+
+                    // --- STEP 3: RESTORE MATH ---
+                    html = html.replace(/%%%MATH_BLOCK_(\d+)%%%/g, (match, i) => mathStorage[i]);
+                    html = html.replace(/%%%MATH_INLINE_(\d+)%%%/g, (match, i) => mathStorage[i]);
+
+                    // --- STEP 4: INJECT HTML ---
+                    container.innerHTML = html;
+
+                    // --- STEP 5: FIX IMAGES (DOM MANIPULATION) ---
+                    // This is the robust fix. We grab the rendered <img> tags and update their src.
+                    const images = container.querySelectorAll('img');
+                    images.forEach(img => {
+                        const rawSrc = img.getAttribute('src');
+                        // If the image source is relative (e.g. "image.png"), prepend the folder path
+                        if (rawSrc && !rawSrc.startsWith('http') && !rawSrc.startsWith('/')) {
+                            img.src = basePath + rawSrc;
+                            console.log(`Fixed image path: ${rawSrc} -> ${img.src}`);
+                        }
+                    });
+
+                    // --- STEP 6: RENDER MATH ---
+                    if (window.MathJax) {
+                        MathJax.typesetPromise([container]);
+                    }
+                })
+                .catch(err => {
+                    console.error(err);
+                    container.innerHTML = `<div style="color:red; border:1px solid red; padding:20px;">
+                        <h3>Error Loading Post</h3>
+                        <p>${err.message}</p>
+                    </div>`;
+                });
         });
     </script>
 </body>
