@@ -1,0 +1,6 @@
+bet number,date,price,odds,description,side,bet payout,promo,odds,cost,side,hedge payout,total cost,minimum pnl,maximum pnl,actual pnl,notes
+1,1/8/2026, $ -   ,+220,Soccer Cagliari vs Cremonese,Cagliari, $ 64.00 ,bonus bet,0.72, $ (31.88),Not Cagliari, $ 44.00 , $ (31.88), $ 12.12 , $ 32.12 , $ 12.12 ,failed to hedge stake return
+2,1/8/2026, $ -   ,+450,Soccer PSG vs Marseille,Marseille, $ 110.00 ,bonus bet,0.865, $ (77.92),Not Marseille, $ 90.00 , $ (77.92), $ 12.08 , $ 32.08 , $ 12.08 ,failed to hedge stake return
+3,1/8/2026, $ -   ,+300,Soccer AC Milan vs Genoa,Draw, $ 80.00 ,bonus bet,77.4, $ (62.00),No Tie, $ 80.00 , $ (62.00), $ 18.00 , $ 18.00 , $ 18.00 ,
+4,1/8/2026, $ -   ,+260,Soccer Athletico Madrid vs Real Madrid,Draw, $ 72.00 ,bonus bet,0.69, $ (41.50),No Draw, $ 60.00 , $ (41.50), $ 18.50 , $ 30.50 , $ 18.50 ,hedged wrong
+5,1/9/2026, $ -   ,+135,Philidelphia 76 vs Orlando Magic,Orlando, $ 47.00 ,bonus bet,0.62, $ (29.00), Philidelphia , $ 47.00 , $ (29.00), $ 18.00 , $ 18.00 , $ 18.00 ,

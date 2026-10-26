@@ -1,0 +1,29 @@
+bet number,date,price,odds,description,side,bet payout,promo,odds,cost,side,hedge payout,total cost,minimum pnl,maximum pnl,actual pnl,notes
+1,1/9/2026, $ (200.00),+240,,draw, $ 680.00 ,bet insurance,0.75, $ (376.75),no tie, $ 500.00 , $ (576.75), $ (76.75), $ 103.25 , $ 103.25 ,bet won. no insurance
+2,1/9/2026, $ -   ,+350,Villarreal vs Alaves,draw, $ 225.00 ,bonus bet,0.78, $ (180.00),no tie, $ 225.00 , $ (180.00), $ 45.00 , $ 45.00 , $ 45.00 ,
+3,1/10/2026, $ (50.00),+262,Tennessee vs Florida,Tennessee, $ 182.00 ,profit boost,0.7, $ (125.00),Florida, $ 180.00 , $ (175.00), $ 5.00 , $ 7.00 , $ 5.00 ,
+4,1/10/2026, $ (200.00),+240,TCU vs Arizona,TCU, $ 680.00 ,bet insurance,0.75, $ (376.00),Arizona, $ 500.00 , $ (576.00), $ (76.00), $ 104.00 , $ (76.00),hedge also gives 200 insurance in fancash
+5,1/10/2026, $ -   ,+240,Mavericks vs Bulls,Mavericks, $ 480.00 ,bonus bet,0.76, $ (366.00),Bulls, $ 480.00 , $ (366.00), $ 114.00 , $ 114.00 , $ 114.00 ,
+6,1/11/2026, $ (50.00),+315,Moneyline - 49ers vs Eagles,49ers, $ 207.00 ,profit boost,0.715, $ (147.96),Eagles, $ 207.00 , $ (197.96), $ 9.05 , $ 9.05 , $ 9.05 ,
+7,1/11/2026, $ (200.00),+210,Moneyline - Pelicans vs Magic,Pelicans, $ 620.00 ,bet insurance,0.72, $ (345.00),Orlando, $ 480.00 , $ (545.00), $ (65.00), $ 75.00 , $ (65.00),Hedge activated and excercised in bet 9
+8,1/11/2026, $ (10.00),+247,Moneyline - Patriots vs Chargers,Chargers, $ 34.75 ,profit boost,0.65, $ (22.75),Patriots, $ 35.00 , $ (32.75), $ 2.00 , $ 2.25 , $ 2.00 ,
+9,1/11/2026, $ -   ,+1050,Moneyline - Cremonese vs Juventus,Cremonese," $ 2,100.00 ",bet insurance,0.944," $ (1,982.00)",Not Cremonese," $ 2,100.00 "," $ (1,982.00)", $ 118.00 , $ 118.00 , $ 118.00 ,
+10,1/12/2026, $ (50.00),+390,Moneyline - Newcastle vs Man City,Tie, $ 245.00 ,profit boost,0.76, $ (187.00),no tie, $ 245.00 , $ (237.00), $ 8.00 , $ 8.00 , $ 8.00 ,
+11,1/12/2026, $ (200.00),+190,Moneyline - Maple leafs vs Avalanches,Maple leafs, $ 580.00 ,bonus bet,0.7, $ (334.00),Avalanches, $ 480.00 , $ (534.00), $ (54.00), $ 46.00 , $ 46.00 ,bet won no bonus bets
+12,1/12/2026, $ (10.00),+390,Moneyline - Spurs vs Thunders,Spurs , $ 40.00 ,profit boost,0.715, $ (28.50),Thunders, $ 40.00 , $ (38.50), $ 1.50 , $ 1.50 , $ 1.50 ,
+13,1/13/2026, $ (200.00),+400,Moneyline Texas AM vs Tennessee,Texas," $ 1,000.00 ",bet insurance,0.83, $ (747.00),Tennessee, $ 900.00 , $ (947.00), $ (47.00), $ 53.00 , $ (47.00),Hedge activated and dispersed 200 in bonus bets - used in bet 16
+14,1/13/2026, $ (50.00),+375,Moneyline - Indiana vs Michigan,Indiana, $ 238.00 ,profit boost,0.75, $ (179.00),Michigan st, $ 238.00 , $ (229.00), $ 9.00 , $ 9.00 , $ 9.00 ,
+15,1/14/2026, $ (200.00),+450,Moneyline - Iowa vs Purdue,Iowa," $ 1,100.00 ",bet insurance,0.85, $ (832.00),Purdue, $ 980.00 ," $ (1,032.00)", $ (52.00), $ 68.00 , $ (52.00),hedge activated and dispersed 200 in bonus bets
+16,1/14/2026, $ -   ,+650,Moneyline - Gardner Webb vs Radford,GW," $ 1,300.00 ",bonus bet,0.9," $ (1,178.00)",Radford," $ 1,300.00 "," $ (1,178.00)", $ 122.00 , $ 122.00 , $ 122.00 ,
+17,1/14/2026, $ (50.00),+465,Moneyline - Colorado vs Cincinnati,Colorado, $ 282.00 ,profit boost,0.78, $ (221.00),Cincinnati, $ 283.00 , $ (271.00), $ 11.00 , $ 12.00 , $ 11.00 ,
+18,1/15/2026, $ -   ,+700,Moneyline - Maine vs Vermont,Maine," $ 1,400.00 ",bonus bet,0.915," $ (1,282.00)",Vermont," $ 1,400.00 "," $ (1,282.00)", $ 118.00 , $ 118.00 , $ 118.00 ,
+19,1/15/2026, $ (200.00),+400,Moneyline - Detroit vs Northern Kentuky,Detroit," $ 1,000.00 ",bet insurance,0.85, $ (747.50),Northern Kentuky, $ 880.00 , $ (947.50), $ (67.50), $ 52.50 , $ (67.50),"bet lost, hedge activated, 200 bonus bets earned"
+20,1/15/2026, $ (50.00),+600,Moneyline - Bellarmine vs Lipscomb,Bellarmine, $ 350.00 ,profit boost,0.85, $ (297.00),Lipscomb, $ 350.00 , $ (347.00), $ 3.00 , $ 3.00 , $ 3.00 ,
+21,1/15/2026, $ (25.00),+1350,Moneyline - Santander vs Barcelona,Santander, $ 362.50 ,qualifying bet,0.84, $ (305.00),Barcelona, $ 363.00 , $ (330.00), $ 32.50 , $ 33.00 , $ (9.00),messed up promo activation - pivoted to earn $25 in DK
+22,1/15/2026, $ -   ,+600,Moneyline - PSG vs Lille,Lille," $ 1,200.00 ",bonus bet,0.9," $ (1,076.00)",Not Lille," $ 1,200.00 "," $ (1,076.00)", $ 124.00 , $ 124.00 , $ 124.00 ,
+23,1/16/2026, $ (200.00),+220,Moneyline - Wizards vs Kings,Wizards, $ 640.00 ,bet insurance,0.72, $ (376.00),Kings, $ 520.00 , $ (576.00), $ (56.00), $ 64.00 , $ (56.00),hedge activated and bonus bets used in bet 26
+24,1/16/2026, $ (50.00),+1500,Moneyline - GT vs NC State,Kentuky, $ 215.00 ,profit boost,0.715, $ (153.00),Tennessee, $ 215.00 , $ (203.00), $ 12.00 , $ 12.00 , $ 12.00 ,
+25,1/17/2026, $ (200.00),+475,Moneyline - Standford vs Duke,Standford," $ 1,150.00 ",bet insurance,0.86, $ (885.00),Duke," $ 1,030.00 "," $ (1,085.00)", $ (55.00), $ 65.00 , $ (55.00),if hedge activates 200 bonus bets disperse ~= $120
+26,1/17/2026, $ -   ,+800,Moneyline - Seattle vs Gonzaga,Seattle," $ 1,600.00 ",bonus bet,0.92," $ (1,470.00)",Gonzaga," $ 1,600.00 "," $ (1,470.00)", $ 130.00 , $ 130.00 , $ 130.00 ,
+27,1/17/2026, $ (38.50),+195,Moneyline - Jazz vs Mavericks,Jazz, $ 113.50 ,profit boost,0.62, $ (70.00),Mavericks, $ 114.00 , $ (108.50), $ 5.00 , $ 5.50 , $ 5.00 ,
+28,1/26/2026, $ -   ,n/a,max bet placed on account - exited bonus bets at 0.6 ,underdog, $ -   ,bonus bet  ,0, $ -   ,favorite, $ -   ,0, $ 120.00 , $ 120.00 , $ 120.00 ,combination of many many bets to exit position. Account restricted from suspicious behavior

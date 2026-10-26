@@ -1,0 +1,3 @@
+bet number,date,price,odds,description,side,bet payout,promo,odds,cost,side,hedge payout,total cost,minimum pnl,maximum pnl,actual pnl,notes
+1,1/7/2026, $ (250.00),+140,Moneyline pacers vs hornets,indiana, $ 607.00 ,qualifying bet,0.62, $ (382.00),hornets, $ 600.00 , $ (632.00), $ (32.00), $ (25.00), $ (32.00),cost to get the 250 in promo bets
+2,1/8/2026, $ -   ,+700,Moneyline Northwestern vs Michigan st,Northwestern," $ 2,000.00 ",bonus bet,0.9," $ (1,767.60)",Michigan ST," $ 1,964.00 "," $ (1,767.60)", $ 196.40 , $ 232.40 , $ 232.40 ,poor hedge
