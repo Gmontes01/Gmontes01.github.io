@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post | Gabriel Montes</title>
     <link rel="stylesheet" href="style.css">
-    
+
     <script>
         window.MathJax = {
             tex: {
-                // Support both \[ \] and $$ $$
-                inlineMath: [['\\(', '\\)']], 
+                // Support \( \), \[ \], $ $, and $$ $$
+                // Inline math now includes single $ so posts written
+                // in $...$ style typeset, not just \(...\) style.
+                inlineMath: [['\\(', '\\)'], ['$', '$']],
                 displayMath: [['\\[', '\\]'], ['$$', '$$']],
                 processEscapes: true
             },
@@ -19,41 +21,71 @@
             }
         };
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/marked@9.1.2/marked.min.js"></script>
 
     <style>
-        /* Force readable colors regardless of system theme */
-        body { background-color: #ffffff; color: #333333; }
-        
-        #markdown-content { 
-            max-width: 800px; 
-            margin: 0 auto; 
-            padding: 20px; 
-            line-height: 1.6; 
-            font-family: 'Inter', sans-serif; 
+        /* Dark theme: inherit style.css instead of forcing white.
+           The old rule forced a white background here, after the
+           style.css link, so it overrode the dark theme on every
+           post page. Removing it lets the rest of the site's
+           dark theme apply. */
+        body { background-color: var(--bg); color: var(--text); }
+
+        #markdown-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: transparent;
+        }
+
+        #markdown-content a {
+            color: var(--accent);
         }
 
         /* Image styling */
-        img { 
-            max-width: 100%; 
-            height: auto; 
-            display: block; 
-            margin: 20px auto; 
-            border: 1px solid #ddd;
-            border-radius: 4px; 
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border: 1px solid #1e293b;
+            border-radius: 4px;
         }
 
-        /* Code block styling */
-        pre { background: #f4f4f4; padding: 15px; overflow-x: auto; border-radius: 5px; }
+        /* Code block styling - dark, to match the rest of the site */
+        pre {
+            background: var(--card);
+            color: var(--text);
+            padding: 15px;
+            overflow-x: auto;
+            border-radius: 5px;
+            border: 1px solid #1e293b;
+        }
+
+        #markdown-content code {
+            color: var(--accent);
+            background: var(--card);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        #markdown-content pre code {
+            background: transparent;
+            padding: 0;
+            color: var(--text);
+        }
     </style>
 </head>
 <body>
 
     <nav>
         <div class="container">
-            <a href="index.html" class="logo-link" style="text-decoration:none; color:#000; font-weight:bold;">G.MONTES</a>
+            <a href="index.html" class="logo-link" style="text-decoration:none; font-weight:bold;">G.MONTES</a>
         </div>
     </nav>
 
@@ -64,7 +96,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const container = document.getElementById('markdown-content');
-            
+
             const urlParams = new URLSearchParams(window.location.search);
             const fileName = urlParams.get('file');
 
@@ -84,14 +116,30 @@
                 })
                 .then(markdown => {
                     // --- STEP 1: PROTECT MATH ---
+                    // Order matters: protect $$...$$ BEFORE $...$,
+                    // otherwise a $...$ match would split a $$ block in half.
+                    // The (?<!\\) lookbehind means an escaped \$ for money
+                    // (e.g. \$100) is not treated as a math delimiter.
                     const mathStorage = [];
+                    // Protect $$ ... $$ (display math, may span lines)
+                    let protectedText = markdown.replace(/(?<!\\)\$\$([\s\S]*?)(?<!\\)\$\$/g, (match) => {
+                        mathStorage.push(match);
+                        return `%%%MATH_BLOCK_${mathStorage.length - 1}%%%`;
+                    });
                     // Protect \[ ... \]
-                    let protectedText = markdown.replace(/\\\[([\s\S]*?)\\\]/g, (match) => {
+                    protectedText = protectedText.replace(/\\\[([\s\S]*?)\\\]/g, (match) => {
                         mathStorage.push(match);
                         return `%%%MATH_BLOCK_${mathStorage.length - 1}%%%`;
                     });
                     // Protect \( ... \)
                     protectedText = protectedText.replace(/\\\(([\s\S]*?)\\\)/g, (match) => {
+                        mathStorage.push(match);
+                        return `%%%MATH_INLINE_${mathStorage.length - 1}%%%`;
+                    });
+                    // Protect $ ... $ (inline math, single line, no $ inside)
+                    // This runs last, after $$ blocks are already placeholders,
+                    // so it cannot split a display block.
+                    protectedText = protectedText.replace(/(?<!\\)\$([^\$\n]+?)(?<!\\)\$/g, (match) => {
                         mathStorage.push(match);
                         return `%%%MATH_INLINE_${mathStorage.length - 1}%%%`;
                     });
@@ -119,8 +167,28 @@
                     });
 
                     // --- STEP 6: RENDER MATH ---
+                    // The MathJax script tag above no longer has async,
+                    // so MathJax should already be loaded here. Retry
+                    // briefly anyway, in case a CDN load is slow, instead
+                    // of silently skipping math as the old code did.
+                    const typesetMath = () => {
+                        if (window.MathJax && window.MathJax.typesetPromise) {
+                            MathJax.typesetPromise([container]).catch(err => console.error(err));
+                        }
+                    };
                     if (window.MathJax) {
-                        MathJax.typesetPromise([container]);
+                        typesetMath();
+                    } else {
+                        let attempts = 0;
+                        const timer = setInterval(() => {
+                            attempts++;
+                            if (window.MathJax) {
+                                clearInterval(timer);
+                                typesetMath();
+                            } else if (attempts > 50) {
+                                clearInterval(timer);
+                            }
+                        }, 100);
                     }
                 })
                 .catch(err => {
