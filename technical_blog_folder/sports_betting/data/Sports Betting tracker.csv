@@ -1,0 +1,109 @@
+bet number,date,price,odds,description,side,bet payout,promo,odds.1,cost,side.1,hedge payout,total cost,minimum pnl,maximum pnl,actual pnl,notes,book_name
+1,1/12/2026," $ (1,500.00)",170,Moneyline Clippers vs Hornets,Hornets," $ 4,050.00 ",bet insurance,0.65," $ (2,165.00)",Clippers," $ 3,300.00 "," $ (3,665.00)", $ (365.00), $ 385.00 , $ (365.00),valued bonus bets 0.5 to the dollar when the actual value was 0.67,BetMGM
+2,1/13/2026, $ -   ,450,Moneyline Bulls vs Rockets,Bulls," $ 1,350.00 ",bonus bet,0.84," $ (1,134.00)",Rockets," $ 1,350.00 "," $ (1,134.00)", $ 216.00 , $ 216.00 , $ 216.00 ,$300 bonus bet stake,BetMGM
+3,1/13/2026, $ -   ,850,Moneyline - Marquette vs St. Johns,Marquette," $ 2,550.00 ",bonus bet,0.925," $ (2,359.00)",St. Johns," $ 2,550.00 "," $ (2,359.00)", $ 191.00 , $ 191.00 , $ 191.00 ,$300 bonus bet stake,BetMGM
+4,1/14/2026, $ -   ,475,Moneyline - Wizards vs Clippers,Wizards," $ 1,425.00 ",bonus bet,0.86," $ (1,224.00)",Clippers," $ 1,425.00 "," $ (1,224.00)", $ 201.00 , $ 201.00 , $ 201.00 ,$300 bonus bet stake,BetMGM
+5,1/14/2026, $ -   ,475,Moneyline - Wizards vs Clippers,Wizards," $ 1,425.00 ",bonus bet,0.86," $ (1,224.00)",Clippers," $ 1,425.00 "," $ (1,224.00)", $ 201.00 , $ 201.00 , $ 201.00 ,$300 bonus bet stake,BetMGM
+6,1/14/2026, $ -   ,475,Moneyline - Wizards vs Clippers,Wizards," $ 1,425.00 ",bonus bet,0.86," $ (1,224.00)",Clippers," $ 1,425.00 "," $ (1,224.00)", $ 201.00 , $ 201.00 , $ 201.00 ,$300 bonus bet stake,BetMGM
+1,1/7/2026, $ (250.00),140,Moneyline pacers vs hornets,indiana, $ 607.00 ,qualifying bet,0.62, $ (382.00),hornets, $ 600.00 , $ (632.00), $ (32.00), $ (25.00), $ (32.00),cost to get the 250 in promo bets,Caesars
+2,1/8/2026, $ -   ,700,Moneyline Northwestern vs Michigan st,Northwestern," $ 2,000.00 ",bonus bet,0.9," $ (1,767.60)",Michigan ST," $ 1,964.00 "," $ (1,767.60)", $ 196.40 , $ 232.40 , $ 232.40 ,poor hedge,Caesars
+1,1/7/2026, $ (20.00),+300,Moneyline - Denver Nuggets vs Boston Celtics,Denver Nuggets, $ 93.80 ,profit boost,0.77, $ (72.00),Boston Celtics, $ 92.00 , $ (92.00), $ -   , $ 1.80 , $ -   ,,DraftKings
+2,1/7/2026, $ (20.00),+189,Moneyline - Miami vs Ol Miss,Ol Miss, $ 57.80 ,profit boost,0.62, $ (39.00),Maimi, $ 60.00 , $ (59.00), $ (1.20), $ 1.00 , $ (1.20),,DraftKings
+3,1/7/2026, $ (20.00),+572,Moneyline - Rams vs Panthers,Panthers, $ 134.40 ,profit boost,0.84, $ (113.40),Rams, $ 134.00 , $ (133.40), $ 0.60 , $ 1.00 , $ 0.60 ,,DraftKings
+4,1/7/2026, $ (20.00),+195,Moneyline - Oregeon vs Indiana,Oregeon, $ 59.00 ,profit boost,0.62, $ (38.78),Indiana, $ 60.00 , $ (58.78), $ 0.22 , $ 1.22 , $ 0.22 ,,DraftKings
+5,1/7/2026, $ (25.00),+210,Moneyline - Bulls vs Pistons,bulls, $ 77.50 ,profit boost,0.62, $ (47.50), Pistons , $ 77.00 , $ (72.50), $ 4.50 , $ 5.00 , $ 4.50 ,,DraftKings
+6,1/8/2026, $ (10.00),+330,Moneyline - Maine vs UMBC,Maine, $ 51.50 ,profit boost,0.8, $ (39.60), UMBC , $ 50.00 , $ (49.60), $ 0.40 , $ 1.90 , $ 0.40 ,,DraftKings
+7,1/9/2026, $ (10.00),+220,Moneyline - Bears vs Packers,Bears, $ 32.00 ,profit boost,0.54, $ (17.84), Packers , $ 32.00 , $ (27.84), $ 4.16 , $ 4.16 , $ 4.16 ,,DraftKings
+8,1/9/2026, $ -   ,+200,Moneyline - Trail Blazers vs Houston,Trail blazers, $ 30.00 ,bonus bet,0.69, $ (20.70), Houston , $ 30.00 , $ (20.70), $ 9.30 , $ 9.30 , $ 9.30 ,,DraftKings
+9,1/10/2026, $ (10.00),+ 481,Moneyline - Rams vs Panthers,Panthers, $ 58.00 ,profit boost,0.79, $ (46.00), Rams , $ 58.00 , $ (56.00), $ 2.00 , $ 2.00 , $ 2.00 ,,DraftKings
+10,1/10/2026, $ (10.00),+300,Moneyline - Rams vs Panthers,Panthers, $ 40.00 ,qualifying bet,0.78, $ (31.30), Rams , $ 40.00 , $ (41.30), $ (1.30), $ (1.30), $ (1.30),Qualified me for 10$ in bonus bets,DraftKings
+11,1/10/2026, $ (5.00),+320,Moneyline - Patriots vs Chargers,Chargers, $ 21.00 ,profit boost,0.66, $ (13.80), Patriots , $ 21.00 , $ (18.80), $ 2.20 , $ 2.20 , $ 2.20 ,,DraftKings
+12,1/10/2026, $ -   ,+350,Moneyline - Derby vs Leeds,Derby, $ 35.00 ,bonus bet,0.83, $ (29.00), Not Derby , $ 35.00 , $ (29.00), $ 6.00 , $ 6.00 , $ 6.00 ,,DraftKings
+13,1/11/2026, $ (10.00),+430,Moneyline - 49ers vs Eagles,49ers, $ 53.00 ,profit boost,0.715, $ (37.90), Eagles , $ 53.00 , $ (47.90), $ 5.11 , $ 5.11 , $ 5.11 ,,DraftKings
+14,1/11/2026, $ (10.00),+130,Moenyline - Jaguars vs Bills,Bills, $ 23.00 ,qualifying bet,0.59, $ (13.50), Jags , $ 23.00 , $ (23.50), $ (0.50), $ (0.50), $ (0.50),Qualify for $10 bonus bets,DraftKings
+15,1/11/2026, $ -   ,+850,Moneyline - Liverpool vs Barnsley,Draw, $ 212.00 ,bonus bet,0.935, $ (198.00), no draw , $ 212.00 , $ (198.00), $ 14.00 , $ 14.00 , $ 14.00 ,,DraftKings
+16,1/11/2026, $ (10.00),+406,Moneyline - Blue Jackets vs Mammoths,Blue Jackets, $ 50.00 ,profit boost,0.74, $ (37.00), Mammoth , $ 50.00 , $ (47.00), $ 3.00 , $ 3.00 , $ 3.00 ,,DraftKings
+17,1/13/2026, $ -   ,+310,Moneyline Northern Illinois vs Eastern Michigan,Northern Illinois, $ 77.50 ,bonus bet,0.8, $ (62.50), Eastern Michigan , $ 78.00 , $ (62.50), $ 15.00 , $ 15.50 , $ 15.00 ,,DraftKings
+18,1/15/2026, $ -   ,+1200,Moneyline - Washington vs Gonzaga,Washington, $ 300.00 ,bonus bet,0.96, $ (289.00),Gonzaga, $ 300.00 , $ (289.00), $ 11.00 , $ 11.00 , $ 11.00 ,,DraftKings
+19,1/16/2026, $ (20.00),+350,Moneyline - 49ers vs Seahawks,49ers, $ 90.00 ,profit boost,0.75, $ (68.00),Seahawks, $ 90.00 , $ (88.00), $ 2.00 , $ 2.00 , $ 2.00 ,,DraftKings
+20,1/25/2026, $ (20.00),+228,Moneyline - Rams vs Seahawks,Rams, $ 65.60 ,profit boost,0.666, $ (43.29),Seahawks, $ 65.00 , $ (63.29), $ 1.71 , $ 2.31 , $ 1.71 ,,DraftKings
+21,1/25/2026, $ (5.00),+330,Moneyline - Brooklyn nets vs LA clipper,nets, $ 21.50 ,qualifying bet,0.8, $ (17.00),clippers, $ 21.00 , $ (22.00), $ (1.00), $ (0.50), $ (1.00),qualifies me for $10 bonus bets,DraftKings
+22,1/25/2026, $ -   ,+1940,Moneyline - Luciano vs Sinner,Luciano, $ 485.00 ,bonus bet,0.96, $ (467.00),Sinner, $ 485.00 , $ (467.00), $ 18.00 , $ 18.00 , $ 18.00 ,,DraftKings
+23,1/25/2026, $ (40.00),+143,Moneyline - Fritz vs Musetti,Musetti, $ 97.20 ,profit boost,0.57, $ (55.00),Fritz, $ 97.00 , $ (95.00), $ 2.00 , $ 2.20 , $ 2.00 ,,DraftKings
+24,1/26/2026, $ -   ,+340,Moneyline - Grizzlies vs Rockets,Grizzlies, $ 34.00 ,bonus bet,0.82, $ (27.90), Rockets , $ 34.00 , $ (27.90), $ 6.10 , $ 6.10 , $ 6.10 ,,DraftKings
+25,1/27/2026, $ (10.00),+1170,Moneyline - Sinner vs Shelton,Shelton, $ 127.00 ,profit boost,0.906, $ (115.00),Sinner, $ 127.00 , $ (125.00), $ 2.00 , $ 2.00 , $ 2.00 ,,DraftKings
+1,1/9/2026, $ (200.00),240.0,,draw, $ 680.00 ,bet insurance,0.75, $ (376.75),no tie, $ 500.00 , $ (576.75), $ (76.75), $ 103.25 , $ 103.25 ,bet won. no insurance,Fanatics
+2,1/9/2026, $ -   ,350.0,Villarreal vs Alaves,draw, $ 225.00 ,bonus bet,0.78, $ (180.00),no tie, $ 225.00 , $ (180.00), $ 45.00 , $ 45.00 , $ 45.00 ,,Fanatics
+3,1/10/2026, $ (50.00),262.0,Tennessee vs Florida,Tennessee, $ 182.00 ,profit boost,0.7, $ (125.00),Florida, $ 180.00 , $ (175.00), $ 5.00 , $ 7.00 , $ 5.00 ,,Fanatics
+4,1/10/2026, $ (200.00),240.0,TCU vs Arizona,TCU, $ 680.00 ,bet insurance,0.75, $ (376.00),Arizona, $ 500.00 , $ (576.00), $ (76.00), $ 104.00 , $ (76.00),hedge also gives 200 insurance in fancash,Fanatics
+5,1/10/2026, $ -   ,240.0,Mavericks vs Bulls,Mavericks, $ 480.00 ,bonus bet,0.76, $ (366.00),Bulls, $ 480.00 , $ (366.00), $ 114.00 , $ 114.00 , $ 114.00 ,,Fanatics
+6,1/11/2026, $ (50.00),315.0,Moneyline - 49ers vs Eagles,49ers, $ 207.00 ,profit boost,0.715, $ (147.96),Eagles, $ 207.00 , $ (197.96), $ 9.05 , $ 9.05 , $ 9.05 ,,Fanatics
+7,1/11/2026, $ (200.00),210.0,Moneyline - Pelicans vs Magic,Pelicans, $ 620.00 ,bet insurance,0.72, $ (345.00),Orlando, $ 480.00 , $ (545.00), $ (65.00), $ 75.00 , $ (65.00),Hedge activated and excercised in bet 9,Fanatics
+8,1/11/2026, $ (10.00),247.0,Moneyline - Patriots vs Chargers,Chargers, $ 34.75 ,profit boost,0.65, $ (22.75),Patriots, $ 35.00 , $ (32.75), $ 2.00 , $ 2.25 , $ 2.00 ,,Fanatics
+9,1/11/2026, $ -   ,1050.0,Moneyline - Cremonese vs Juventus,Cremonese," $ 2,100.00 ",bet insurance,0.944," $ (1,982.00)",Not Cremonese," $ 2,100.00 "," $ (1,982.00)", $ 118.00 , $ 118.00 , $ 118.00 ,,Fanatics
+10,1/12/2026, $ (50.00),390.0,Moneyline - Newcastle vs Man City,Tie, $ 245.00 ,profit boost,0.76, $ (187.00),no tie, $ 245.00 , $ (237.00), $ 8.00 , $ 8.00 , $ 8.00 ,,Fanatics
+11,1/12/2026, $ (200.00),190.0,Moneyline - Maple leafs vs Avalanches,Maple leafs, $ 580.00 ,bonus bet,0.7, $ (334.00),Avalanches, $ 480.00 , $ (534.00), $ (54.00), $ 46.00 , $ 46.00 ,bet won no bonus bets,Fanatics
+12,1/12/2026, $ (10.00),390.0,Moneyline - Spurs vs Thunders,Spurs , $ 40.00 ,profit boost,0.715, $ (28.50),Thunders, $ 40.00 , $ (38.50), $ 1.50 , $ 1.50 , $ 1.50 ,,Fanatics
+13,1/13/2026, $ (200.00),400.0,Moneyline Texas AM vs Tennessee,Texas," $ 1,000.00 ",bet insurance,0.83, $ (747.00),Tennessee, $ 900.00 , $ (947.00), $ (47.00), $ 53.00 , $ (47.00),Hedge activated and dispersed 200 in bonus bets - used in bet 16,Fanatics
+14,1/13/2026, $ (50.00),375.0,Moneyline - Indiana vs Michigan,Indiana, $ 238.00 ,profit boost,0.75, $ (179.00),Michigan st, $ 238.00 , $ (229.00), $ 9.00 , $ 9.00 , $ 9.00 ,,Fanatics
+15,1/14/2026, $ (200.00),450.0,Moneyline - Iowa vs Purdue,Iowa," $ 1,100.00 ",bet insurance,0.85, $ (832.00),Purdue, $ 980.00 ," $ (1,032.00)", $ (52.00), $ 68.00 , $ (52.00),hedge activated and dispersed 200 in bonus bets,Fanatics
+16,1/14/2026, $ -   ,650.0,Moneyline - Gardner Webb vs Radford,GW," $ 1,300.00 ",bonus bet,0.9," $ (1,178.00)",Radford," $ 1,300.00 "," $ (1,178.00)", $ 122.00 , $ 122.00 , $ 122.00 ,,Fanatics
+17,1/14/2026, $ (50.00),465.0,Moneyline - Colorado vs Cincinnati,Colorado, $ 282.00 ,profit boost,0.78, $ (221.00),Cincinnati, $ 283.00 , $ (271.00), $ 11.00 , $ 12.00 , $ 11.00 ,,Fanatics
+18,1/15/2026, $ -   ,700.0,Moneyline - Maine vs Vermont,Maine," $ 1,400.00 ",bonus bet,0.915," $ (1,282.00)",Vermont," $ 1,400.00 "," $ (1,282.00)", $ 118.00 , $ 118.00 , $ 118.00 ,,Fanatics
+19,1/15/2026, $ (200.00),400.0,Moneyline - Detroit vs Northern Kentuky,Detroit," $ 1,000.00 ",bet insurance,0.85, $ (747.50),Northern Kentuky, $ 880.00 , $ (947.50), $ (67.50), $ 52.50 , $ (67.50),"bet lost, hedge activated, 200 bonus bets earned",Fanatics
+20,1/15/2026, $ (50.00),600.0,Moneyline - Bellarmine vs Lipscomb,Bellarmine, $ 350.00 ,profit boost,0.85, $ (297.00),Lipscomb, $ 350.00 , $ (347.00), $ 3.00 , $ 3.00 , $ 3.00 ,,Fanatics
+21,1/15/2026, $ (25.00),1350.0,Moneyline - Santander vs Barcelona,Santander, $ 362.50 ,qualifying bet,0.84, $ (305.00),Barcelona, $ 363.00 , $ (330.00), $ 32.50 , $ 33.00 , $ (9.00),messed up promo activation - pivoted to earn $25 in DK,Fanatics
+22,1/15/2026, $ -   ,600.0,Moneyline - PSG vs Lille,Lille," $ 1,200.00 ",bonus bet,0.9," $ (1,076.00)",Not Lille," $ 1,200.00 "," $ (1,076.00)", $ 124.00 , $ 124.00 , $ 124.00 ,,Fanatics
+23,1/16/2026, $ (200.00),220.0,Moneyline - Wizards vs Kings,Wizards, $ 640.00 ,bet insurance,0.72, $ (376.00),Kings, $ 520.00 , $ (576.00), $ (56.00), $ 64.00 , $ (56.00),hedge activated and bonus bets used in bet 26,Fanatics
+24,1/16/2026, $ (50.00),1500.0,Moneyline - GT vs NC State,Kentuky, $ 215.00 ,profit boost,0.715, $ (153.00),Tennessee, $ 215.00 , $ (203.00), $ 12.00 , $ 12.00 , $ 12.00 ,,Fanatics
+25,1/17/2026, $ (200.00),475.0,Moneyline - Standford vs Duke,Standford," $ 1,150.00 ",bet insurance,0.86, $ (885.00),Duke," $ 1,030.00 "," $ (1,085.00)", $ (55.00), $ 65.00 , $ (55.00),if hedge activates 200 bonus bets disperse ~= $120,Fanatics
+26,1/17/2026, $ -   ,800.0,Moneyline - Seattle vs Gonzaga,Seattle," $ 1,600.00 ",bonus bet,0.92," $ (1,470.00)",Gonzaga," $ 1,600.00 "," $ (1,470.00)", $ 130.00 , $ 130.00 , $ 130.00 ,,Fanatics
+27,1/17/2026, $ (38.50),195.0,Moneyline - Jazz vs Mavericks,Jazz, $ 113.50 ,profit boost,0.62, $ (70.00),Mavericks, $ 114.00 , $ (108.50), $ 5.00 , $ 5.50 , $ 5.00 ,,Fanatics
+28,1/26/2026, $ -   ,,max bet placed on account - exited bonus bets at 0.6 ,underdog, $ -   ,bonus bet  ,0.0, $ -   ,favorite, $ -   ,0, $ 120.00 , $ 120.00 , $ 120.00 ,combination of many many bets to exit position. Account restricted from suspicious behavior,Fanatics
+1,1/7/2026, $ (25.00),750,Moneyline Rams vs Panthers,Panthers, $ 212.00 ,profit boost,0.83, $ (178.00),Rams, $ 212.00 , $ (203.00), $ 9.00 , $ 9.00 , $ 9.00 ,,FanDuel
+2,1/7/2026, $ (25.00),485,Moneyline Pelicans vs Hawks,Pelicans, $ 146.00 ,profit boost,0.8, $ (116.00),Hawks, $ 145.00 , $ (141.00), $ 4.00 , $ 5.00 , $ 4.00 ,,FanDuel
+3,1/7/2026, $ (25.00),270,Moneyline Grizzlies vs Suns,Grizzlies, $ 92.50 ,profit boost,0.7, $ (64.40),Suns, $ 92.00 , $ (89.40), $ 2.60 , $ 3.10 , $ 2.60 ,,FanDuel
+4,1/7/2026, $ -   ,300,Moneyline Utah vs KC,Utah," $ 1,200.00 ",bonus bet,0.87," $ (1,053.00)",KC," $ 1,200.00 "," $ (1,053.00)", $ 147.00 , $ 147.00 , $ 147.00 ,,FanDuel
+5,1/8/2026, $ (20.00),364,Over/Under 42.5,Under, $ 92.80 ,profit boost,0.765, $ (70.44),Over, $ 92.00 , $ (90.44), $ 1.56 , $ 2.36 , $ 1.56 ,,FanDuel
+6,1/9/2026, $ (25.00),121,Over/Under 49.5 Peach Bowl,Under, $ 55.25 ,profit boost,0.5, $ (28.47),Over, $ 55.00 , $ (53.47), $ 1.53 , $ 1.78 , $ 1.53 ,,FanDuel
+7,1/9/2026, $ (50.00),520,3 - Moneyline Everton vs Sunderland,Sunderland, $ 360.00 ,profit boost,0.77, $ (276.00),Not sunderland, $ 360.00 , $ (326.00), $ 34.00 , $ 34.00 , $ 34.00 ,,FanDuel
+8,1/9/2026, $ (100.00),600,3 - Moneyline Fulham vs Middlesbrough,Draw, $ 700.00 ,profit boost,0.8, $ (561.00),No Draw, $ 700.00 , $ (661.00), $ 39.00 , $ 39.00 , $ 39.00 ,,FanDuel
+9,1/9/2026, $ (100.00),620,3- Moneyline Newcastle vs Bournemouth,Bournemouth, $ 720.00 ,profit boost,0.8, $ (575.00),Not Bournemouth, $ 720.00 , $ (675.00), $ 45.00 , $ 45.00 , $ 45.00 ,,FanDuel
+10,1/10/2026, $ (25.00),154,Moneyline Auburn vs Arkansas,Arkansas, $ 63.50 ,profit boost,0.59, $ (37.00),Auburn, $ 63.00 , $ (62.00), $ 1.00 , $ 1.50 , $ 1.00 ,,FanDuel
+13,1/10/2026, $ (100.00),100,Moneyline - Jacksonville vs Buffalo,Buffalo, $ 200.00 ,qualifying bet,0.55, $ (109.00),Jacksonville, $ 200.00 , $ (209.00), $ (9.00), $ (9.00), $ (9.00),failed stake match,FanDuel
+16,1/11/2026, $ (25.00),440,Moneyline - 49ers vs Eagles,49ers, $ 135.00 ,profit boost,0.715, $ (96.53),Eagles, $ 135.00 , $ (121.53), $ 13.48 , $ 13.48 , $ 13.48 ,,FanDuel
+17,1/12/2026, $ (25.00),310,Moneyline - Kings vs Lakers,Kings, $ 102.50 ,qualifying bet,0.77, $ (79.00),Lakers, $ 102.00 , $ (104.00), $ (2.00), $ (1.50), $ (1.50),earned $25 in bonus bets,FanDuel
+18,1/13/2026, $ -   ,980,Moneyline - Boston College vs Clemson,Boston College, $ 245.00 ,bonus bet,0.944, $ (231.00),Clemson, $ 245.00 , $ (231.00), $ 14.00 , $ 14.00 , $ 14.00 ,,FanDuel
+19,1/13/2026, $ (25.00),570,Moneyline George Mason vs Loyola,Loyola, $ 167.50 ,profit boost,0.8, $ (135.00), George Mason , $ 168.00 , $ (160.00), $ 7.50 , $ 8.00 , $ 7.50 ,,FanDuel
+20,1/14/2026, $ (25.00),236,Moneyline Denver vs Dallas,Denver, $ 84.00 ,profit boost,0.567, $ (47.60), Dallas , $ 84.00 , $ (72.60), $ 11.40 , $ 11.40 , $ 11.40 ,,FanDuel
+21,1/14/2026, $ (25.00),198,Moneyline - Jazz vs Bulls,Jazz, $ 75.00 ,profit boost,0.65, $ (48.48), Bulls , $ 75.00 , $ (73.48), $ 1.52 , $ 1.52 , $ 1.52 ,,FanDuel
+22,1/15/2026, $ (25.00),300,Moneyline - bucks vs Spurs,Bucks, $ 100.00 ,profit boost,0.73, $ (73.50), Spurs , $ 100.00 , $ (98.50), $ 1.50 , $ 1.50 , $ 1.50 ,,FanDuel
+23,1/15/2026, $ (25.00),300,Moneyline - Suns vs Pistons,Suns, $ 100.00 ,profit boost,0.72, $ (72.50), Pistons , $ 100.00 , $ (97.50), $ 2.50 , $ 2.50 , $ 2.50 ,,FanDuel
+24,1/15/2026, $ (25.00),346,Moneyline - Miami vs Indiana,Maimi, $ 111.50 ,profit boost,0.75, $ (84.00), Indiana , $ 112.00 , $ (109.00), $ 2.50 , $ 3.00 , $ 2.50 ,,FanDuel
+25,1/15/2026, $ (25.00),354,Moneyline - Knicks vs Warriors,Knicks, $ 113.50 ,profit boost,0.715, $ (81.50), Warriors , $ 114.00 , $ (106.50), $ 7.00 , $ 7.50 , $ 7.00 ,,FanDuel
+26,1/16/2026, $ -   ,1000,Moneyline - Minnesota vs Illinois,Minnesota, $ 250.00 ,bonus bet,0.935, $ (233.75), Illinois , $ 250.00 , $ (233.75), $ 16.25 , $ 16.25 , $ 16.25 ,,FanDuel
+27,1/16/2026, $ -   ,1000,Moneyline - Minnesota vs Illinois,Minnesota, $ 100.00 ,bonus bet,0.935, $ (93.50), Illinois , $ 100.00 , $ (93.50), $ 6.50 , $ 6.50 , $ 6.50 ,,FanDuel
+28,1/16/2026, $ (25.00),415,Moneyline - Kansas vs Baylor,Baylor, $ 128.75 ,profit boost,0.76, $ (98.00), Kansas , $ 129.00 , $ (123.00), $ 5.75 , $ 6.00 , $ 5.75 ,,FanDuel
+29,1/16/2026, $ (25.00),415,Moneyline - Kansas vs Baylor,Baylor, $ 128.75 ,profit boost,0.76, $ (98.00), Kansas , $ 129.00 , $ (123.00), $ 5.75 , $ 6.00 , $ 5.75 ,,FanDuel
+30,1/16/2026, $ (25.00),151,Moneyline - 76ers vs Cavaliers,Cavs, $ 63.00 ,profit boost,0.59, $ (37.00), 76ers , $ 63.00 , $ (62.00), $ 1.00 , $ 1.00 , $ 1.00 ,,FanDuel
+31,1/16/2026, $ (25.00),268,Moneyline - Kings vs Wizards,Wizards, $ 92.00 ,profit boost,0.715, $ (66.00), Kings , $ 92.00 , $ (91.00), $ 1.00 , $ 1.00 , $ 1.00 ,,FanDuel
+32,1/16/2026, $ (25.00),190,Moneyline - Timberwolves vs Rockets,Timberwolves, $ 72.50 ,profit boost,0.635, $ (45.80), Rockets , $ 72.00 , $ (70.80), $ 1.20 , $ 1.70 , $ 1.20 ,,FanDuel
+33,1/17/2026, $ (25.00),175,Moneyline - BYU vs Texas Tech,BYU, $ 68.75 ,profit boost,0.6, $ (41.80), Texas Tech , $ 69.00 , $ (66.80), $ 1.95 , $ 2.20 , $ 1.95 ,,FanDuel
+34,1/17/2026, $ (25.00),368,Moneyline - 49ers vs Seahawks,49ers, $ 117.00 ,profit boost,0.74, $ (87.00), Seahawks , $ 117.00 , $ (112.00), $ 5.00 , $ 5.00 , $ 5.00 ,,FanDuel
+35,1/19/2026, $ -   ,700,Moneyline - Jazz vs Spurs,Jazz, $ 700.00 ,bonus bet,0.9, $ (635.00), Spurs , $ 700.00 , $ (635.00), $ 65.00 , $ 65.00 , $ 65.00 ,,FanDuel
+36,1/19/2026, $ (25.00),525,Moneyline - Mavericks vs Knicks,Mavericks, $ 156.00 ,profit boost,0.81, $ (126.50), Knicks , $ 156.00 , $ (151.50), $ 4.50 , $ 4.50 , $ 4.50 ,,FanDuel
+37,1/20/2026, $ (100.00),500,Moneyline - Jazz vs Timberwolves,Jazz, $ 600.00 ,bet insurance,0.87, $ (469.00), Timberwolves , $ 540.00 , $ (569.00), $ (29.00), $ 31.00 , $ 31.00 ,"insured bet, insurance not activated",FanDuel
+38,1/20/2026, $ (25.00),430,Moneyline - Oklahoma state vs TCU,Oklahoma state, $ 132.50 ,profit boost,0.79, $ (105.00), TCU , $ 133.00 , $ (130.00), $ 2.50 , $ 3.00 , $ 2.50 ,,FanDuel
+39,1/25/2026, $ (10.00),186,Moneyline - Rams vs Seahawks,Seahawks, $ 28.60 ,profit boost,0.58, $ (16.75), Rams , $ 29.00 , $ (26.75), $ 1.85 , $ 2.25 , $ 1.85 ,,FanDuel
+40,1/25/2026, $ -   ,720,Moneyline - Penn st vs Ohio st,Penn st, $ 720.00 ,bonus bet,0.9, $ (652.00), Ohio st , $ 720.00 , $ (652.00), $ 68.00 , $ 68.00 , $ 68.00 ,,FanDuel
+41,1/26/2026, $ (10.00),600,Moneyline - De Minaur vs Alcaraz,De Minaur, $ 70.00 ,profit boost,0.84, $ (58.80),Alcaraz, $ 70.00 , $ (68.80), $ 1.20 , $ 1.20 , $ 1.20 ,,FanDuel
+42,1/26/2026, $ (10.00),445,Moneyline  - Louisville vs Duke,Louisville, $ 54.50 ,profit boost,0.81, $ (43.81), Duke , $ 54.00 , $ (53.81), $ 0.19 , $ 0.69 , $ 0.19 ,,FanDuel
+43,1/27/2026, $ (10.00),750,Moneyline - Nebraska vs Michigan,Nebraska, $ 85.00 ,profit boost ,0.86, $ (73.00), Michigan , $ 85.00 , $ (83.00), $ 2.00 , $ 2.00 , $ 2.00 ,,FanDuel
+44,1/27/2026, $ (10.00),740,Moneyline - Sacramento Kings vs NY knicks,Sacramento, $ 84.00 ,profit boost,0.88, $ (73.75), Knicks , $ 84.00 , $ (83.75), $ 0.25 , $ 0.25 , $ 0.25 ,,FanDuel
+45,1/27/2026, $ (10.00),1040,Moneyline - Sinner vs Shelton,Shelton, $ 114.00 ,profit boost,0.906, $ (103.00), Sinner , $ 114.00 , $ (113.00), $ 1.00 , $ 1.00 , $ 1.00 ,,FanDuel
+46,1/28/2026, $ (20.00),358,Moneyline Jazz vs Warriors,Jazz, $ 91.60 ,profit boost,0.77, $ (71.00), Warriors , $ 92.00 , $ (91.00), $ 0.60 , $ 1.00 , $ 0.60 ,,FanDuel
+1,1/8/2026, $ -   ,220,Soccer Cagliari vs Cremonese,Cagliari, $ 64.00 ,bonus bet,0.72, $ (31.88),Not Cagliari, $ 44.00 , $ (31.88), $ 12.12 , $ 32.12 , $ 12.12 ,failed to hedge stake return,TheScoreBet
+2,1/8/2026, $ -   ,450,Soccer PSG vs Marseille,Marseille, $ 110.00 ,bonus bet,0.865, $ (77.92),Not Marseille, $ 90.00 , $ (77.92), $ 12.08 , $ 32.08 , $ 12.08 ,failed to hedge stake return,TheScoreBet
+3,1/8/2026, $ -   ,300,Soccer AC Milan vs Genoa,Draw, $ 80.00 ,bonus bet,77.4, $ (62.00),No Tie, $ 80.00 , $ (62.00), $ 18.00 , $ 18.00 , $ 18.00 ,,TheScoreBet
+4,1/8/2026, $ -   ,260,Soccer Athletico Madrid vs Real Madrid,Draw, $ 72.00 ,bonus bet,0.69, $ (41.50),No Draw, $ 60.00 , $ (41.50), $ 18.50 , $ 30.50 , $ 18.50 ,hedged wrong,TheScoreBet
+5,1/9/2026, $ -   ,135,Philidelphia 76 vs Orlando Magic,Orlando, $ 47.00 ,bonus bet,0.62, $ (29.00), Philidelphia , $ 47.00 , $ (29.00), $ 18.00 , $ 18.00 , $ 18.00 ,,TheScoreBet

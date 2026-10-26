@@ -1,0 +1,113 @@
+.dashboard-wrapper {
+  margin-top: 1.5rem;
+  font-family: inherit;
+}
+
+/* KPI Cards */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.kpi-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.25rem;
+  border-radius: 8px;
+}
+
+.kpi-title {
+  font-size: 0.85rem;
+  color: #888;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.kpi-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Controls */
+.dashboard-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.dashboard-search {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: rgba(0, 0, 0, 0.2);
+  color: inherit;
+  width: 280px;
+}
+
+/* Table */
+.table-responsive {
+  overflow-x: auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.dashboard-table th, .dashboard-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.dashboard-table th.sortable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.dashboard-table th.sortable:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+
+/* Badges & Colors */
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.badge-green { background: rgba(34, 197, 94, 0.15); color: #4ade80; }
+.badge-blue  { background: rgba(59, 130, 246, 0.15); color: #60a5fa; }
+.text-positive { color: #4ade80; }
+.text-negative { color: #f87171; }
+
+/* Pagination */
+.dashboard-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.dashboard-pagination button {
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  border: 1px solid #444;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.dashboard-pagination button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
